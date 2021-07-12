@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Números por extenso</title>
+</head>
+<body>
+    <div class = "container mx-auto p-6">
+    <h1 class="text-center text-8x1 font-semibold mb-8" >Números por extenso</h1>
+        <label class ="flex flex-col space-y-2 border p-2 mb-4 md:rounded-2xl">
+            <span>Escolha um número entre 0 e 999</span>
+            <input id= "inputRange" type="range" value="0" min="0" max="999" step="1">
+        </label>
+        <label class ="flex flex-col space-y-2 border p-2 mb-4 md:rounded-2xl">
+            <span>Número atual</span>
+            <input id= "inputCurrentNumber" class="bg-gray-100 p-2" value="0" type="text" readonly disabled>
+        </label>
+        <label class ="flex flex-col space-y-2 border p-2 mb-4 md:rounded-2xl">
+            <span>Número por extenso</span>
+            <input id= "inputNumberText" class="bg-gray-100 p-2" value="zero" type="text" readonly disabled>
+        </label>
+    </div>
+    <script defer src= 'script.js'></script>
+
+
+</body>
+</html>
