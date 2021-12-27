@@ -7,4 +7,6 @@ PROJETO 01: Input do tipo range com o valor sendo mostrado na tela e também por
 PROJETO 2 : Pesquisa de usuários com filtro apontando a quantidade e a média de usuários, pesquisa via back-end com javascript moderno e html com tailwind:
 ![image](https://user-images.githubusercontent.com/66573331/125366589-c2ca7580-e34c-11eb-855f-7543297c6371.png)
 
-
+PROJETO 3: API básica para treino e aprendizagem de requisições node js , api de um banco, para teste de cadastro de clientes em json, apenas para título de prática mesmo, abaixo alguma imagens da documentação feita com swagger para a API, requisições do tipo post e get.
+![Screenshot_1](https://user-images.githubusercontent.com/66573331/147513625-040055ab-7445-4f90-a3b8-653ce8a4e665.jpg)
+![Screenshot_2](https://user-images.githubusercontent.com/66573331/147513633-6092bcf8-59b0-48af-be75-8f7da3ff6982.jpg)
