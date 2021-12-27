@@ -1,0 +1,87 @@
+2021-12-21T14:08:48.238Z [undefined] info: API Started
+2021-12-21T14:10:09.802Z [my-bank-api] info: API Started
+2021-12-21T14:12:37.477Z [my-bank-api] info: api started and file created!
+2021-12-21T14:12:37.820Z [my-bank-api] info: API Started
+2021-12-21T14:14:56.427Z [my-bank-api] error: GET /account - ENOENT: no such file or directory, open 'C:\xamppp\htdocs\projetos\bootcamp\03\accounts.json'
+2021-12-21T14:16:31.543Z [my-bank-api] info: api started and file created!
+2021-12-21T14:16:31.996Z [my-bank-api] info: API Started
+2021-12-21T14:18:15.425Z [my-bank-api] info: API Started
+2021-12-21T14:18:56.365Z [my-bank-api] info: API Started
+2021-12-21T14:19:26.862Z [my-bank-api] info: API Started
+2021-12-21T14:20:47.034Z [my-bank-api] info: API Started
+2021-12-21T14:21:10.111Z [my-bank-api] info: API Started
+2021-12-21T14:21:11.612Z [my-bank-api] info: API Started
+2021-12-21T14:21:36.601Z [my-bank-api] info: API Started
+2021-12-21T14:22:01.670Z [my-bank-api] info: API Started
+2021-12-21T14:22:17.767Z [my-bank-api] info: API Started
+2021-12-21T14:23:21.055Z [my-bank-api] info: POST /account - {"id":1,"name":"Joao Santos","balance":1500}
+2021-12-21T14:23:21.384Z [my-bank-api] info: API Started
+2021-12-21T14:23:32.975Z [my-bank-api] info: POST /account - {"id":2,"name":"Maria Santos","balance":2000}
+2021-12-21T14:23:33.297Z [my-bank-api] info: API Started
+2021-12-21T14:23:45.335Z [my-bank-api] info: POST /account - {"id":3,"name":"Paulo Souza","balance":2500}
+2021-12-21T14:23:45.655Z [my-bank-api] info: API Started
+2021-12-21T14:23:50.971Z [my-bank-api] info: GET /account
+2021-12-21T14:23:57.083Z [my-bank-api] info: GET /account/:id
+2021-12-22T01:03:31.187Z [my-bank-api] info: API Started
+2021-12-22T01:03:38.360Z [my-bank-api] info: POST /account - {"id":4,"name":"Joao Silva Santos","balance":0}
+2021-12-22T01:03:38.869Z [my-bank-api] info: API Started
+2021-12-22T01:03:46.136Z [my-bank-api] error: POST /account - Name e Balance precisam ser preenchidos
+2021-12-22T01:05:25.017Z [my-bank-api] info: API Started
+2021-12-22T01:07:39.056Z [my-bank-api] info: API Started
+2021-12-22T01:09:02.948Z [my-bank-api] info: API Started
+2021-12-22T01:10:11.137Z [my-bank-api] info: API Started
+2021-12-22T01:10:52.705Z [my-bank-api] info: API Started
+2021-12-22T01:12:28.843Z [my-bank-api] info: API Started
+2021-12-22T01:13:07.912Z [my-bank-api] info: API Started
+2021-12-22T01:13:22.359Z [my-bank-api] info: API Started
+2021-12-22T01:13:40.457Z [my-bank-api] info: API Started
+2021-12-22T01:14:42.635Z [my-bank-api] info: GET /account
+2021-12-22T01:16:41.731Z [my-bank-api] info: API Started
+2021-12-22T01:18:47.259Z [my-bank-api] info: API Started
+2021-12-22T01:20:16.627Z [my-bank-api] info: GET /account
+2021-12-22T01:20:20.010Z [my-bank-api] info: GET /account/:id
+2021-12-22T01:20:29.257Z [my-bank-api] error: PATCH /account - Id e Balance precisam ser preenchidos
+2021-12-22T01:20:48.224Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:20:57.738Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:20:58.729Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:20:59.236Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:20:59.442Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:20:59.642Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:20:59.825Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:21:00.040Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:21:11.477Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2,"balance":5000}
+2021-12-22T01:21:11.829Z [my-bank-api] info: API Started
+2021-12-22T01:21:17.065Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2,"balance":""}
+2021-12-22T01:21:17.378Z [my-bank-api] info: API Started
+2021-12-22T01:21:27.525Z [my-bank-api] info: API Started
+2021-12-22T01:21:30.357Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2,"balance":""}
+2021-12-22T01:21:30.665Z [my-bank-api] info: API Started
+2021-12-22T01:21:52.531Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:21:52.857Z [my-bank-api] info: API Started
+2021-12-22T01:21:53.476Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:21:53.789Z [my-bank-api] info: API Started
+2021-12-22T01:23:39.411Z [my-bank-api] error: PATCH /account - Registro não encontrado
+2021-12-22T01:23:45.981Z [my-bank-api] info: PATCH /account/updateBalance - {"id":4}
+2021-12-22T01:23:46.341Z [my-bank-api] info: API Started
+2021-12-22T01:23:56.331Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:56.642Z [my-bank-api] info: API Started
+2021-12-22T01:23:57.113Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:57.433Z [my-bank-api] info: API Started
+2021-12-22T01:23:57.505Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:57.506Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:57.833Z [my-bank-api] info: API Started
+2021-12-22T01:23:57.893Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:58.251Z [my-bank-api] info: API Started
+2021-12-22T01:23:58.334Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:58.400Z [my-bank-api] info: PATCH /account/updateBalance - {"id":2}
+2021-12-22T01:23:58.666Z [my-bank-api] info: API Started
+2021-12-22T01:25:01.124Z [my-bank-api] info: API Started
+2021-12-22T01:25:04.526Z [my-bank-api] error: PATCH /account - Id e Balance precisam ser preenchidos
+2021-12-22T01:26:13.251Z [my-bank-api] info: API Started
+2021-12-22T01:26:21.443Z [my-bank-api] info: API Started
+2021-12-27T22:41:40.991Z [my-bank-api] info: API Started
+2021-12-27T22:42:30.598Z [my-bank-api] info: GET /account
+2021-12-27T23:20:01.716Z [my-bank-api] info: API Started
+2021-12-27T23:23:22.861Z [my-bank-api] info: API Started
+2021-12-27T23:27:31.211Z [my-bank-api] info: API Started
+2021-12-27T23:28:18.065Z [my-bank-api] info: API Started
