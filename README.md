@@ -14,3 +14,7 @@ PROJETO 3: API básica para treino e aprendizagem de requisições node js , api
 PROJETO 4 : Back-end de prática de node.js, testando diferentes métodos da aplicação, usando arquivo .json trazendo estados e suas cidades, cidade com nome mais longo e mais curto, apenas o básico para treinar. Abaixo alguns resultados da aplicação em console.log mesmo
 ![image](https://user-images.githubusercontent.com/66573331/147998307-b5324e8d-6db4-4107-8237-f32b3dd186fe.png)
 
+
+PROJETO 5 : API em node js, para ordenação, busca e cálculos de média de notas de alunos e suas respectivas matérias.Abaixo um exemplo do resultado do método post para trazer as 3 melhores notas na matéria Javascript.
+![image](https://user-images.githubusercontent.com/66573331/148851195-4d50044c-f40c-4c77-9952-d3c1481c7c7f.png)
+
