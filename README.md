@@ -18,5 +18,6 @@ PROJETO 4 : Back-end de prática de node.js, testando diferentes métodos da apl
 PROJETO 5 : API em node js, para ordenação, busca e cálculos de média de notas de alunos e suas respectivas matérias.Abaixo um exemplo do resultado do método post para trazer as 3 melhores notas na matéria Javascript.
 ![image](https://user-images.githubusercontent.com/66573331/148851195-4d50044c-f40c-4c77-9952-d3c1481c7c7f.png)
 
-PROJETO 6 : Chatbot simples feito em php, aberto para melhorias como melhor forma de respostas, projeto para prática de alguns conceitos básicos de php
+PROJETO 6 : Chatbot simples feito em php, aberto para melhorias como melhor forma de respostas, projeto para prática de alguns conceitos básicos de php.
+
 ![ezgif-7-314e7ff89f](https://user-images.githubusercontent.com/66573331/151896226-0a5dfcee-c102-4177-aa6b-f68fe7eb652e.gif)
