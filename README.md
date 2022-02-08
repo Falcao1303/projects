@@ -21,3 +21,5 @@ PROJETO 5 : API em node js, para ordenação, busca e cálculos de média de not
 PROJETO 6 : Chatbot simples feito em php, aberto para melhorias como melhor forma de respostas, projeto para prática de alguns conceitos básicos de php.
 
 ![ezgif-7-314e7ff89f](https://user-images.githubusercontent.com/66573331/151896226-0a5dfcee-c102-4177-aa6b-f68fe7eb652e.gif)
+
+PROJETO 7 : API Básica em node para cadastro, delete e alterações como sistema de um pet-shop.PS: sem imagem.
