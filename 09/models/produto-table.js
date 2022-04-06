@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
-const db = require ('./connections');
+const conexao = require ('./connections');
 
 
 
-const Produto = db.define('produto',{
+const Produto = {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement : true,
@@ -16,7 +16,7 @@ const Produto = db.define('produto',{
     },
     preco: Sequelize.DECIMAL,
     quantidade: Sequelize.INTEGER
-})
+}
 
-module.exports = Produto;
+module.exports = conexao.define('produto',Produto);
  
