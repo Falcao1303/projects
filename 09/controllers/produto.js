@@ -1,5 +1,6 @@
 const ProdutoTable = require('./transictions')
-
+const InvalidData = require('./InvalidData')
+const DataNotFound = require('./DataNotFound')
 class Produto {
     constructor({ id, nome, preco, quantidade, createdAt, updateAt}){
         this.id = id
@@ -46,7 +47,7 @@ class Produto {
        })
 
        if(Object.keys(dadosAtualizar).length === 0){
-        throw new Error('Não foram fornecidos dados para atualizar!');
+        throw new DataNotFound();
    }
        await ProdutoTable.atualizar(this.id, dadosAtualizar)
     }
@@ -57,11 +58,10 @@ class Produto {
 
     validar(){
         const campos = ['nome', 'preco', 'quantidade']
-
         campos.forEach(campo=> {
             const valor = this[campo];
-            if(valor.length < 3){
-                throw new Error(`O campo ${campo} não pode ser nulo!`);
+            if(valor === undefined || valor.length < 3){
+                throw new InvalidData(campo);
             }
             });
     }

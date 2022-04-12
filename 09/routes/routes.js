@@ -1,6 +1,8 @@
 const route = require('express').Router()
 const tableModelProducts = require('../controllers/transictions') 
 const Produto = require('../controllers/produto')
+const NotFound = require('../controllers/errorNotFound')
+const InvalidData = require('../controllers/invalidData')
 
 
     route.get('/produto/',async  (req,res) =>{
@@ -9,7 +11,7 @@ const Produto = require('../controllers/produto')
     res.send(JSON.stringify(results));
     })
     
-    route.post('/',async(req,res)=>{
+    route.post('/',async(req,res,next)=>{
         try{
             const dados = req.body
             const produto = new Produto(dados)
@@ -19,17 +21,12 @@ const Produto = require('../controllers/produto')
                  JSON.stringify(produto)
              )      
         }catch(erro){
-            res.status(400)
-            res.send(
-                JSON.stringify({
-                    mensagem: erro.message
-                })
-            )
+            next(erro)
         }
 
     })
 
-    route.get('/produto/:idProduto',async(req,res)=>{
+    route.get('/produto/:idProduto',async(req,res,next)=>{
         try{
             const id = req.params.idProduto
             const produto = new Produto({ id : id})
@@ -39,16 +36,11 @@ const Produto = require('../controllers/produto')
                 JSON.stringify(produto)
             )
         }catch(erro){
-            res.status(404)
-            res.send(
-                JSON.stringify({
-                    mensagem: erro.message
-                })
-            )
+            next(erro)
         }
     })
 
-    route.put('/produto/:idProduto',async(req,res)=>{
+    route.put('/produto/:idProduto',async(req,res,next)=>{
         try{
             const id = req.params.idProduto
             const dadosRecebidos = req.body
@@ -58,16 +50,11 @@ const Produto = require('../controllers/produto')
             res.status(204)
             res.end()
         }catch(erro){
-            res.status(400)
-            res.send(
-                JSON.stringify({
-                    mensagem: erro.message
-                })
-            )
+            next(erro)
         }
     })
 
-    route.delete('/produto/:idProduto',async(req,res)=>{
+    route.delete('/produto/:idProduto',async(req,res,next)=>{
         try{
             const id = req.params.idProduto
             const produto = new Produto({ id : id})
@@ -76,12 +63,7 @@ const Produto = require('../controllers/produto')
             res.status(204)
             res.end()
         }catch(erro){
-            res.status(404)
-            res.send(
-                JSON.stringify({
-                    mensagem: erro.message
-                })
-            )
+            next(erro)
         }
     })
 
