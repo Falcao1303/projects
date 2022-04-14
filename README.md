@@ -1,4 +1,4 @@
-# projetos treinamento
+# Projects
 Projetos de estudo e treino feitos com base em conhecimentos pelo bootcamp
 
 PROJETO 01: Input do tipo range com o valor sendo mostrado na tela e também por extenso o mesmo valor, tecnologias usadas, html com  framework tailwind e javascript puro:
