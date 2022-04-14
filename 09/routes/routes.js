@@ -1,14 +1,18 @@
 const route = require('express').Router()
 const tableModelProducts = require('../controllers/transictions') 
 const Produto = require('../controllers/produto')
-const NotFound = require('../controllers/errorNotFound')
-const InvalidData = require('../controllers/invalidData')
+const ProductSerialize = require ('../Serializador').ProductSerialize
 
 
     route.get('/produto/',async  (req,res) =>{
      const results = await tableModelProducts.listar();
-     res.status(200)   
-    res.send(JSON.stringify(results));
+     res.status(200)
+     const serializeProduct = new ProductSerialize(
+        res.getHeader('Content-Type')
+    )
+    res.send(
+        serializeProduct.serialize(results) 
+    )         
     })
     
     route.post('/',async(req,res,next)=>{
@@ -17,8 +21,11 @@ const InvalidData = require('../controllers/invalidData')
             const produto = new Produto(dados)
              await produto.criar()
              res.status(201)
+             const serializeProduct = new ProductSerialize(
+                res.getHeader('Content-Type')
+            )
              res.send(
-                 JSON.stringify(produto)
+                serializeProduct.serialize(produto) 
              )      
         }catch(erro){
             next(erro)
@@ -32,8 +39,11 @@ const InvalidData = require('../controllers/invalidData')
             const produto = new Produto({ id : id})
             await produto.carregar()
             res.status(200)
+            const serializeProduct = new ProductSerialize(
+                res.getHeader('Content-Type')
+            )
             res.send(
-                JSON.stringify(produto)
+                serializeProduct.serialize(produto) 
             )
         }catch(erro){
             next(erro)

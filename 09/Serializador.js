@@ -1,17 +1,21 @@
 const NotSupportedValue = require('./controllers/NotSupportedValue')
 
 class Serializador {
-    json(dados){
-        return JSON.stringify(dados)
+    json(data){
+        return JSON.stringify(data)
     }
 
-    serialize(dados){
+    serialize(data){
+
         if(this.contentType === 'application/json'){
-            return this.json(dados)
+            return this.json(
+                this.objectFilter(data)
+            )
         }
         throw new NotSupportedValue(this.contentType)
     }
-}
+
+    }
 
 module.exports = {
     Serializador : Serializador,
