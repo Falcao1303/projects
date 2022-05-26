@@ -3,8 +3,8 @@
 
 <!-- MDB -->
 
-<section class="vh-100" style="background-color: #eee;">
-  <div class="container h-100">
+<section ng-app="register" class="vh-100" style="background-color: #eee;">
+  <div ng-controller="registerController" class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px;">
@@ -56,7 +56,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg">Register</button>
+                    <button type="button" ng-click="saveRegister()" class="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>
