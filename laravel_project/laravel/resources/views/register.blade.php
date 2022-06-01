@@ -20,7 +20,7 @@
                     <i class="fas fa-user fa-lg me-3 mt-3 fa-fw"></i>
                     <div class="mb-0">
                     <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+                    <input type="name" class="form-control" id="exampleFormControlInput1" ng-model="registerForm.name" placeholder="Full Name">
                     </div>
                   </div>
 
@@ -28,7 +28,7 @@
                     <i class="fas fa-envelope fa-lg me-3 mt-3 fa-fw"></i>
                     <div class="mb-0">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" ng-model="registerForm.email" placeholder="name@example.com">
                     </div>
                   </div>
 
@@ -36,7 +36,7 @@
                     <i class="fas fa-lock fa-lg me-3 mt-3 fa-fw"></i>
                     <div class="mb-0">
                       <label for="exampleFormControlInput1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleFormControlInput1" ng-model="registerForm.password" placeholder="Password">
                     </div>
                   </div>
 
@@ -44,12 +44,12 @@
                     <i class="fas fa-key fa-lg me-3 mt-3 fa-fw"></i>
                     <div class="mb-0">
                     <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm password">
+                    <input type="password" class="form-control" id="exampleFormControlInput1" ng-model="registerForm.password_confirmation" placeholder="Confirm password">
                     </div>
                   </div>
 
                   <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <input class="form-check-input me-2" type="checkbox" value="" ng-model="registerForm.terms"id="form2Example3c" />
                     <label class="form-check-label" for="form2Example3">
                       I agree all statements in <a href="#!">Terms of service</a>
                     </label>
