@@ -6,6 +6,7 @@ angular.module('registerService',[]).service('registerService', ['$http', functi
     
     service.defaultError = function(erro) {
         mytoast('error', erro.msg);
+        
     }
 
     service.getRegistros = function (scope, callback, erro) {
