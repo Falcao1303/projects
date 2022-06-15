@@ -25,7 +25,10 @@ public function getRegisters(){
     return $this->_modelUsers->getRegisters();
 }
 
-public function saveRegister(){
+public function saveRegister(Request $request){
+    echo'<pre>';
+    dd($request->post());
+    exit;
     return $this->_modelUsers->saveRegisters();
 }
 
