@@ -27,7 +27,7 @@ class OperationsModel extends Model{
     }
 
     public function deposit($id,$amount){
-        return DB::update('UPDATE `testes`.bank SET balance = balance + ? WHERE id = ?', [$amount,$id]);
+        return DB::update('UPDATE `testes`.bank SET balance = balance + ? WHERE id = ?', [$amount,$id] );
     }
 
     public function withdraw($id,$amount){
