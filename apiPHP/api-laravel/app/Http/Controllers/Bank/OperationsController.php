@@ -22,17 +22,18 @@ class OperationsController extends Controller{
     }
 
     public function getRegisters(Request $request){
-            $id = $request->query('id');
-            $account = $this->_modelAccounts->getRegisters($id);
+            $id = $request->query('account_id');
+            $account = $this->_modelAccounts->getBalance($id);
              if(sizeof($account) === 0){
                  return response(sizeof($account), 404);
              }else{
-                 return response($account,200);
+                 return response($account[0]->balance,200);
              }      
     }
 
     public function event(Request $request){
-        $id = $request->input('id') == '' ? $request->input('destination') : $request->input('id');
+        $id = $request->input('account_id') == '' ? $request->input('destination') : $request->input('id');
+        $origin = $request->input('origin');
         $destination = $request->input('destination');
         $amount = $request->input('amount');
         $type = $request->input('type');
@@ -46,19 +47,21 @@ class OperationsController extends Controller{
             }
 
             if(sizeof($account) === 0){
-                return throw new Exception("Account not found", 404);
-            }else{
+                return response(sizeof($account), 404);
+            }
                 if($type == 'deposit'){
                     $this->_modelAccounts->transactions($destination, $amount,$date,$type);
                     $this->_modelAccounts->deposit($destination, $amount,$date);
                     $actualbalance = $account[0]->balance;
                     return response(['destination' => ['id' => $id,'balance' => $actualbalance + $amount]],201);
+                }else if($type == 'withdraw'){
+                    $this->_modelAccounts->transactions($origin, $amount,$date,$type);
+                    $this->_modelAccounts->withdraw($origin, $amount);
+                    return response($origin,201);
                 }else{
-                    $insertWithdrawTransaction = $this->_modelAccounts->transactions($destination, $amount,$date,$type);
-                    $withdraw = $this->_modelAccounts->withdraw($destination, $amount,$date);
-                    return json_encode($insertWithdrawTransaction,$withdraw,201);
+                    return response('Invalid type',400);
                 }
-            }
+            
 
     
     }

@@ -18,6 +18,10 @@ class OperationsModel extends Model{
         return DB::select('SELECT *  FROM `testes`.bank WHERE id = ?', [$id]);
     }
 
+    public function getBalance($id){
+        return DB::select('SELECT balance  FROM `testes`.bank WHERE id = ?', [$id]);
+    }
+
     public function createAccount($id,$amount,$date){
         return DB::insert('INSERT INTO `testes`.bank (id,balance,created_at) VALUES (?,?,?)', [$id,$amount,$date]);
     }
