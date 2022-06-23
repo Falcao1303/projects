@@ -38,28 +38,48 @@ class OperationsController extends Controller{
         $amount = $request->input('amount');
         $type = $request->input('type');
         $date = date("Y-m-d H:i:s");
+        $account2 = 300;
+        $account2balance = 0;
 
-        $account = $this->_modelAccounts->getRegisters($destination);
-
-            if($type == '' || $type == 'deposit' && sizeof($account) === 0){
-                $this->_modelAccounts->createAccount($id, $amount,$date);
-                return response(['destination' => ['id' => $id,'balance' => $amount]],201);
+  
+            if($origin == ''){
+                $account = $this->_modelAccounts->getRegisters($destination);              
+                if($type == '' || $type == 'deposit' && sizeof($account) === 0){
+                    $this->_modelAccounts->createAccount($id, $amount,$date);
+                    return response(['destination' => ['id' => $id,'balance' => $amount]],201);
+                }
+                if(sizeof($account) === 0){
+                    return response(sizeof($account), 404);
+                }
             }
 
-            if(sizeof($account) === 0){
-                return response(sizeof($account), 404);
-            }
                 if($type == 'deposit'){
                     $this->_modelAccounts->transactions($destination, $amount,$date,$type);
                     $this->_modelAccounts->deposit($destination, $amount,$date);
                     $actualbalance = $account[0]->balance;
                     return response(['destination' => ['id' => $id,'balance' => $actualbalance + $amount]],201);
                 }else if($type == 'withdraw'){
+                    $destination = $destination == '' ? $origin : $destination;
+                    $account = $this->_modelAccounts->getRegisters($destination);
+                    if(sizeof($account) === 0){
+                        return response(sizeof($account), 404);
+                    }
                     $this->_modelAccounts->transactions($origin, $amount,$date,$type);
                     $this->_modelAccounts->withdraw($origin, $amount);
-                    return response($origin,201);
+                    return response(['origin'=>['id'=>$origin,'balance'=> $account[0]->balance - $amount]],201);
                 }else{
-                    return response('Invalid type',400);
+                    $account = $this->_modelAccounts->getRegisters($origin);
+                    if(sizeof($account) === 0){
+                        return response(sizeof($account), 404);
+                    }else{
+                        $this->_modelAccounts->createAccount($account2,$account2balance,$date);
+                        $this->_modelAccounts->withdraw($origin, $amount);                        
+                        $this->_modelAccounts->deposit($destination, $amount,$date);
+                        return response(['origin'=>['id'=>"100", 'balance'=> $account[0]->balance - $amount], 'destination' => ['id'=>"$account2", 'balance'=>$account2balance + $amount]],201);
+                    }
+
+
+
                 }
             
 
