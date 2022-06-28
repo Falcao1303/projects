@@ -3,7 +3,7 @@ var app = angular.module('register',['httpdService']);
 app.controller('registerController',RegisterController)
 
 
-RegisterController.$inject = ['$scope', '$http', '$rootScope', '$location', '$window'];
+RegisterController.$inject = ['$scope', '$http', '$rootScope', '$location', '$window','httpdService'];
 
 function RegisterController($scope, $http, $rootScope, $location, $window,httpdService) {
     var $injector = angular.injector();
@@ -13,7 +13,6 @@ function RegisterController($scope, $http, $rootScope, $location, $window,httpdS
 
 
     function iniciarController(){
-        console.log($injector);
         vm.registerForm={
             name:'',
             email:'',
@@ -24,7 +23,8 @@ function RegisterController($scope, $http, $rootScope, $location, $window,httpdS
     }
 
     function saveRegister(){
-            httpdService.post('Laravel_Home_Register', 'saveRegister',params,(response) =>{
+        const params = vm.registerForm;
+            httpdService.get('Laravel_register', 'saveRegister',params,(response) =>{
                 console.log(response);
         });
     }

@@ -21,7 +21,6 @@ app.service('httpdService', ['$rootScope', '$http', function ($rootScope, $http)
             console.log(controller)
             url = `${controller.substring(8).split("_").join('/')}/${method}`;
         }
-
         return $http({
             method: 'POST',
             url: url,

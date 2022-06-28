@@ -15,4 +15,4 @@ use App\Http\Controllers\Home\RegisterController;
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/register/getRegisters', [RegisterController::class, 'getRegisters']);
-Route::post('/register/saveRegister', [RegisterController::class, 'saveRegister']);
+Route::get('/register/saveRegister', [RegisterController::class, 'saveRegister']);

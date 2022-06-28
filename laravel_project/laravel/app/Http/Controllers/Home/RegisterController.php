@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Js;
 use App\Models\Users\UsersModel;
 
 class RegisterController extends Controller{
@@ -26,9 +25,11 @@ public function getRegisters(){
 }
 
 public function saveRegister(Request $request){
-    echo'<pre>';
-    dd($request->post());
-    exit;
+    $name = $request->query('name');
+    $email = $request->query('email');
+    $password = $request->query('password');
+    $terms = $request->query('terms');
+
     return $this->_modelUsers->saveRegisters();
 }
 
