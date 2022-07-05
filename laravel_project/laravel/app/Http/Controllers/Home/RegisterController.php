@@ -28,9 +28,13 @@ public function saveRegister(Request $request){
     $name = $request->query('name');
     $email = $request->query('email');
     $password = $request->query('password');
-    $terms = $request->query('terms');
 
-    return $this->_modelUsers->saveRegisters();
+    $savedb = $this->_modelUsers->saveRegister($name, $email, $password);
+    if($savedb){
+        return response()->json(['status' => 'success', 'message' => 'Register success']);
+    }else{
+        return response()->json(['status' => 'error', 'message' => 'Register success']);
+    }
 }
 
     
