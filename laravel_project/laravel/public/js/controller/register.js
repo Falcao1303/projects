@@ -3,9 +3,9 @@ var app = angular.module('register',['httpdService']);
 app.controller('registerController',RegisterController)
 
 
-RegisterController.$inject = ['$scope', '$http', '$rootScope', '$location', '$window','httpdService','sweetalert'];
+RegisterController.$inject = ['$scope', '$http', '$rootScope', '$location', '$window','httpdService'];
 
-function RegisterController($scope, $http, $rootScope, $location, $window,httpdService,sweetalert) {
+function RegisterController($scope, $http, $rootScope, $location, $window,httpdService) {
     var $injector = angular.injector();
     console.log($injector);
     console.log($scope);
@@ -25,10 +25,9 @@ function RegisterController($scope, $http, $rootScope, $location, $window,httpdS
     }
 
     function saveRegister(){
-        swal("Sucess!", "Registered!!", "success");
-        // const params = vm.registerForm;
-        //     httpdService.get('Laravel_register', 'saveRegister',params,(response) =>{
-        //         SweetAlert.swal("Sucess!", "Registered!!", "success");
-        // });
+        const params = vm.registerForm;
+            httpdService.get('Laravel_register', 'saveRegister',params,(response) =>{
+                swal("Sucess!", "Registered!!", "success");
+        });
     }
 }
