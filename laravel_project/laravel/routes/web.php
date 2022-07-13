@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\RegisterController;
+use App\Http\Controllers\Home\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,8 @@ use App\Http\Controllers\Home\RegisterController;
 |
 */
 
+Route::get('/', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/register/getRegisters', [RegisterController::class, 'getRegisters']);
 Route::get('/register/saveRegister', [RegisterController::class, 'saveRegister']);
+Route::get('/login/getUser', [LoginController::class, 'getUser']);
