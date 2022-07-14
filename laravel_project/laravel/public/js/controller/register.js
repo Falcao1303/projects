@@ -26,8 +26,8 @@ function RegisterController($scope, $http, $rootScope, $location, $window,httpdS
 
     function saveRegister(){
         const params = vm.registerForm;
-            httpdService.get('Laravel_register', 'saveRegister',params,(response) =>{
-                swal("Sucess!", "Registered!!", "success");
+            httpdService.get('Laravel_Home_Register', 'saveRegister',params,(response) =>{
+                swal("Sucess!", "response.message", "success");
         });
     }
 }

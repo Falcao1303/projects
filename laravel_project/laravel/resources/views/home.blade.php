@@ -13,8 +13,8 @@
 
 </style>    
 
-<body>
-<div class="form-login">    
+<body ng-app="register">
+<div class="form-login"  ng-controller="loginController" >    
 <form>
   <!-- Email input -->
   <div class="form-outline mb-4">
