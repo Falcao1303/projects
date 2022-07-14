@@ -14,6 +14,11 @@ class UsersModel extends Model{
         return DB::select('SELECT * FROM `cadastro-teste`.usuarios');
     }
 
+
+    public function getRegistersLogin($email, $password){
+        return DB::select('SELECT * FROM `cadastro-teste`.usuarios where email = ? and senha = ?', [$email, $password]);
+    }
+
     public function saveRegister($name, $email, $password){
         $data = [
             'nome' => $name,

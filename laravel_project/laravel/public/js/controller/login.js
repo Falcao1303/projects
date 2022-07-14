@@ -14,16 +14,17 @@ function loginController($scope, $http, $rootScope, $location, $window,httpdServ
     iniciarController();
 
     function iniciarController(){
-        vm.registerForm={
+        vm.loginForm={
             email:'',
             password:'',
         }
     }
 
     function findRegister(){
-        const params = vm.registerForm;
-            httpdService.get('Laravel_Home_Login', 'saveRegister',params,(response) =>{
-                swal("Sucess!", "Registered!!", "success");
+        const params = vm.loginForm;
+        console.log(params);
+            httpdService.get('Laravel_Login', 'getUser',params,(response) =>{
+               console.log(response);
         });
     }
 }

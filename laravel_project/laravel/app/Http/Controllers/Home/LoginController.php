@@ -22,9 +22,12 @@ public function index(){
 
 public function getUser(Request $request){
         try{
+            echo'<pre>';
+            print_r($request->all());
+            exit;
             $email = $request->query('email');
             $password = $request->query('password');
-            $user = $this->_modelUsers->getRegisters($email, $password);
+            $user = $this->_modelUsers->getRegistersLogin($email, $password);
             return response()->json(['status' => 'success', 'data' => $user]);
         }catch(\Exception $e){
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
