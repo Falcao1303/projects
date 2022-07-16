@@ -22,3 +22,17 @@ PROJETO 6 : Chatbot simples feito em php, aberto para melhorias como melhor form
 ![ezgif-7-314e7ff89f](https://user-images.githubusercontent.com/66573331/151896226-0a5dfcee-c102-4177-aa6b-f68fe7eb652e.gif)
 
 PROJETO 7 : API Básica em node para cadastro, delete e alterações como sistema de um pet-shop.PS: sem imagem.
+
+PROJETO 8 (Em desenvolvimento) : Crud com Angular.
+
+PROJETO 9 : API em node com apenas um CRUD, com respostas e requisições mais elaboradas, para identificar as respostas do servidor para diversos tipos de requisições.
+
+PROJETO 10 (Base): Base para crud em react.
+
+PROJETO API LARAVEL: Pequena API em Laravel para teste no IPKISS Tester, requisições e transações financeiras de um banco.
+
+BASIC API : Mesmo intuíto do projeto LARAVEL porém em Node
+
+LARAVEL_PROJECT : Projeto de portal de usuários, cadastros gerenciamentos em laravel e frameworks bootstrap,angularJS,Jquery e mysql.
+
+
