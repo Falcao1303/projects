@@ -47,3 +47,68 @@
     width: 30px;
     height: 30px;
 }
+
+.presentation h1{
+    position: absolute;
+    height: 44px;
+    left: 6.39%;
+    right: 62.78%;
+    margin-top: 100px;   
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.presentation p{
+    position: absolute;
+    height: 44px;
+    left: 6.39%;
+    right: 62.78%;
+    margin-top: 150px;   
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 44px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.background{
+    position: absolute;
+    width: 64px;
+    height: 944px;
+    left: 0px;
+    top: 80px;
+    background: #F4F4F4;
+}
+
+.line{
+    position: absolute;
+    width: 1700px;
+    height: 0px;
+    left: 92px;
+    top: 208px;
+    border: 1px solid #BDBDBD;
+}
+
+.page p{
+    position: absolute;
+    height: 24px;
+    left: 6.39%;
+    right: 74.31%;
+    top: 215px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.line2{
+    position: absolute;
+    width: 1700px;
+    height: 0px;
+    left: 92px;
+    top: 248px;
+    border: 1px solid #BDBDBD;
+}

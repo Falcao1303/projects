@@ -8,7 +8,6 @@
 <script src="js/controller/register.js" type="text/javascript"></script>
 <script src="js/controller/login.js" type="text/javascript"></script>
 <script src="js/service/httpd-service.js" type="text/javascript"></script>
-<script src="js/service/httpd-service.js" type="text/javascript"></script>
 <!-- Sweet alert -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.js"></script>
