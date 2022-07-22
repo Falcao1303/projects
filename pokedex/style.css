@@ -26,6 +26,7 @@
     height: 38px;
     left: 28px;
     top: 21px;
+    font-family: 'Roboto', sans-serif;
     color: white;
 }
 
@@ -38,6 +39,7 @@
     color:white;
     font-style: normal;
     font-weight: 700;
+    font-family: 'Roboto', sans-serif;
     font-size: 21px;
     line-height: 44px;
 }
@@ -52,13 +54,21 @@
     height: 30px;
 }
 
+.header2{
+    top: 188px;
+    position: absolute;
+    width: 1700px;
+    height: 0px;
+    left: 120px;
+}
 .presentation h1{
     position: absolute;
     height: 44px;
     left: 6.39%;
     right: 62.78%;
     margin-top: 5px;   
-    font-style: normal;
+    font-style: bold;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 34px;
     line-height: 44px;
@@ -71,6 +81,7 @@
     left: 6.39%;
     right: 62.78%;
     margin-top: 50px;   
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 25px;
     line-height: 44px;
@@ -89,21 +100,19 @@
 .line{
     position: absolute;
     width: 1700px;
+    top: 10px;
     height: 0px;
-    left: 92px;
-    top: 168px;
     border: 1px solid #BDBDBD;
 }
 
 .page p{
     position: absolute;
     height: 24px;
-    left: 6.39%;
-    right: 74.31%;
-    top: 178px;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
+    top: 20px;
+    font-family: 'Roboto';
     line-height: 24px;
     color: rgba(0, 0, 0, 0.6);
 }
@@ -112,7 +121,7 @@
     position: absolute;
     width: 1700px;
     height: 0px;
-    left: 92px;
-    top: 198px;
+    top: 50px;
     border: 1px solid #BDBDBD;
 }
+

@@ -22,6 +22,7 @@ function pokedexController($scope, $http, $rootScope, $location, $window,httpdSe
             url: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20'
         }).then(function successCallback(response) {
             vm.list = response.data.results;
+            vm.total = response.data.count;
             console.log(response);
         }
         );

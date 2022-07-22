@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap" rel="stylesheet">
     <title>Pokedex</title>
 </head>
 
@@ -21,12 +22,14 @@
             <h1>Fase teste prático Front_end</h1>
             <p>Pokebusca</p>
         </div>
-        <div class="line">
-        </div>
-        <div class="page">
-            <p>Exibindo 5 de 10 itens</p>
-        </div>
-        <div class="line2">
+        <div class = "header2">
+            <div class="line">
+            </div>
+            <div class="page">
+                <p>Exibindo 20 de {{total}} itens</p>
+            </div>
+            <div class="line2">
+            </div>
         </div>
         <div ng-repeat="item in list">
             <!-- <p>{{item}}</p> -->
