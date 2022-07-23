@@ -17,13 +17,21 @@ function pokedexController($scope, $http, $rootScope, $location, $window,httpdSe
     }
 
     function getList(){
-    vm.teste = $http({
+    vm.search = $http({
             method: 'GET',
-            url: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20'
+            url: 'https://pokeapi.co/api/v2/pokemon/?offset=0'
         }).then(function successCallback(response) {
             vm.list = response.data.results;
             vm.total = response.data.count;
-            console.log(response);
+            for(let i = 1; i <= 898; i++){
+                vm.searchImages = $http({
+                    method: 'GET',
+                    url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+ i +'.png'
+                }).then(function (response){
+                    angular.extend(vm.list[i-1],{image: response.config.url});
+                });
+
+            }
         }
         );
 

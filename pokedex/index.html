@@ -31,10 +31,15 @@
             <div class="line2">
             </div>
         </div>
-        <div ng-repeat="item in list">
-            <!-- <p>{{item}}</p> -->
-        <div>
+        <div class="list">
+            <div class="item" ng-repeat="item in list">
+                    <img src="{{item.image}}" alt="pokemon">
+                    <h4 id="namepoke">{{item.name}}</h4>
+                    <p id="description">descrição</p>
+            </div>
+        </div>
     </div>
+
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
