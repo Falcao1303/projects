@@ -50,16 +50,16 @@
             </div>
             <div class="index-page">
                 <p>Página 1 de {{totalpages}} páginas </p>
-                <span id="arrow-left-start" class="material-symbols-outlined">
+                <span id="arrow-left-start" class="material-symbols-outlined" ng-click="firstPage()">
                     first_page
                 </span>
-                <span id="arrow-left"class="material-symbols-outlined">
+                <span id="arrow-left"class="material-symbols-outlined" ng-click="previousPage()">
                     chevron_left
                 </span>
-                <span id="arrow-right"class="material-symbols-outlined">
+                <span id="arrow-right"class="material-symbols-outlined" ng-click="nextPage()">
                     chevron_right
                 </span>
-                <span  id="arrow-right-end" class="material-symbols-outlined">
+                <span  id="arrow-right-end" class="material-symbols-outlined" ng-click="lastPage()">
                     last_page
                 </span>
             </div>

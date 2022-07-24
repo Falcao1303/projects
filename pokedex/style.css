@@ -210,6 +210,7 @@
 }
 
 .index-page #arrow-right{
+    cursor:pointer;
     float:right;
     width: 15%;
     margin-top: -32px;
@@ -217,6 +218,7 @@
 }
 
 .index-page #arrow-right-end{
+    cursor:pointer;
     float:right;
     width: -25%;
     margin-top: -32px;
@@ -224,6 +226,7 @@
 }
 
 .index-page #arrow-left-start{
+    cursor:pointer;
     float:right;
     width: 30%;
     margin-top: -32px;
@@ -231,6 +234,7 @@
 }
 
 .index-page #arrow-left{
+    cursor:pointer;
     float:right;
     width: 20%;
     margin-top: -32px;
