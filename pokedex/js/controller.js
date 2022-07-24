@@ -23,6 +23,7 @@ function pokedexController($scope, $http, $rootScope, $location, $window,httpdSe
         }).then(function successCallback(response) {
             vm.list = response.data.results;
             vm.total = response.data.count;
+            vm.totalpages = Math.ceil(vm.total/20);
             for(let i = 1; i <= 898; i++){
                 vm.searchImages = $http({
                     method: 'GET',

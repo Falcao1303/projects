@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family:'Montserrat', sans-serif;
 }
 
 .header{
@@ -91,7 +90,7 @@
 .background{
     position: absolute;
     width: 64px;
-    height: 944px;
+    height: 2670px;
     left: 0px;
     top: 80px;
     background: #F4F4F4;
@@ -99,7 +98,7 @@
 
 .line{
     position: absolute;
-    width: 1700px;
+    width: 1760px;
     top: 10px;
     height: 0px;
     border: 1px solid #BDBDBD;
@@ -119,7 +118,7 @@
 
 .line2{
     position: absolute;
-    width: 1700px;
+    width: 1760px;
     height: 0px;
     top: 50px;
     border: 1px solid #BDBDBD;
@@ -153,11 +152,11 @@
 
 
 #description{
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-size: 16px;
-    margin-left: -75px;
+    margin-left: 12px;
     height: 20px;
     text-align: left;
 }
@@ -168,4 +167,83 @@
     grid-template-columns: auto auto auto;
 }
 
+.line3{
+    position: absolute;
+    width: 1760px;
+    height: 0px;
+    top: 250px;
+    border: 1px solid #BDBDBD;
+}
+
+
+.pagination{
+    align-items: left;
+    top: 2690px;
+    position: absolute;
+    width: 93%;
+    height: 10px;
+    left: 120px;
+}
+
+.index-page{
+    float:right;
+    grid-template-columns: auto auto auto;
+    width: 20%;
+    height: 30px;
+    left: 0;
+    margin-top: 10px;
+}
+
+.index-page p{
+    width: 60%;
+    height: 27px;
+    left: 0;
+    margin-right: -50px;
+    margin-top: 12px;
+}
+
+.line-pagination{
+    width: 100%;
+    left: 0;
+    background-color: gray;
+    height: 2px;
+}
+
+.index-page #arrow-right{
+    float:right;
+    width: 15%;
+    margin-top: -32px;
+    height: 30px;
+}
+
+.index-page #arrow-right-end{
+    float:right;
+    width: -25%;
+    margin-top: -32px;
+    height: 30px;
+}
+
+.index-page #arrow-left-start{
+    float:right;
+    width: 30%;
+    margin-top: -32px;
+    height: 30px;
+}
+
+.index-page #arrow-left{
+    float:right;
+    width: 20%;
+    margin-top: -32px;
+    height: 30px;
+}
+
+
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 2735px;
+    background-color: black;
+}
 

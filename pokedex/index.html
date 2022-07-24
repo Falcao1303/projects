@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Pokedex</title>
 </head>
 
@@ -33,15 +34,45 @@
         </div>
         <div class="list">
             <div class="item" ng-repeat="item in list">
-                    <img src="{{item.image}}" alt="pokemon">
-                    <h4 id="namepoke">{{item.name}}</h4>
-                    <p id="description">descrição</p>
+                    <div class="pokemon-image">
+                        <img src="{{item.image}}" alt="pokemon">
+                    </div>
+                    <div class="pokemon-description">
+                        <h4 id="namepoke">{{item.name}}</h4>
+                        <p id="description">Descrição do pokemon:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt diam in justo placerat pellentesque. Cras vitae laoreet risus. Donec semper lorem at odio ultricies accumsan. Curabitur et congue tortor. Nunc luctus bibendum pretium. Aliquam nec interdum tortor, nec consectetur turpis. Duis sit amet efficitur magna. Maecenas eu urna leo.</p>
+                    </div>
+                    <div class="line3">
+                    </div>
             </div>
         </div>
+        <div class="pagination">
+            <div class="line-pagination">
+            </div>
+            <div class="index-page">
+                <p>Página 1 de {{totalpages}} páginas </p>
+                <span id="arrow-left-start" class="material-symbols-outlined">
+                    first_page
+                </span>
+                <span id="arrow-left"class="material-symbols-outlined">
+                    chevron_left
+                </span>
+                <span id="arrow-right"class="material-symbols-outlined">
+                    chevron_right
+                </span>
+                <span  id="arrow-right-end" class="material-symbols-outlined">
+                    last_page
+                </span>
+            </div>
+            <div class="line2">
+            </div>
+        </div>    
     </div>
 
 
 </body>
+
+<footer>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
 <script src="js/controller.js" type="text/javascript"></script>
 <script src="js/service.js" type="text/javascript"></script>
