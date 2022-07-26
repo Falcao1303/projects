@@ -48,8 +48,10 @@ function pokedexController($scope, $http, $rootScope, $location, $window) {
                         method: 'GET',
                         url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+ i +'.png'
                     }).then(function (response){
-                        console.log("next",vm.list[i]);
-                        angular.extend(vm.list[i],{image: response.config.url});
+                        for(let index = 1; index <= 20; index++){
+                                angular.extend(vm.list[index-1],{image: response.config.url});
+                            console.log("index",index);
+                        }
                   
                     });
                   
