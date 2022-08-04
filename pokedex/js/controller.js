@@ -13,6 +13,7 @@ function pokedexController($scope, $http, $rootScope, $location, $window) {
     vm.lastPage = lastPage;
     vm.nextPage = nextPage;
     vm.previousPage = previousPage;
+    vm.getImagens = getImagens;
     vm.page = 1;
     vm.offset = 0;
     iniciarController();
@@ -23,10 +24,14 @@ function pokedexController($scope, $http, $rootScope, $location, $window) {
         getList();
     }
 
+
     function firstPage(){
         
     }
 
+    function getImagens(){
+        
+    }
 
     function lastPage(){
 
@@ -42,16 +47,25 @@ function pokedexController($scope, $http, $rootScope, $location, $window) {
                 url: 'https://pokeapi.co/api/v2/pokemon/?offset='+ offset + '&limit=20'
             }).then(function successCallback(response) {
                 vm.list = response.data.results;
-                for(let i = vm.offset+20; i <= vm.proxOffset; i++){
-                    // o i tem que ser no maximo até 20 mas as imagens tem que pegar a partir do offset
+                for(let i = vm.offset; i <= vm.proxOffset; i++){
                     vm.searchImages = $http({
                         method: 'GET',
                         url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+ i +'.png'
                     }).then(function (response){
-                        for(let index = 1; index <= 20; index++){
-                                angular.extend(vm.list[index-1],{image: response.config.url});
-                            console.log("index",index);
-                        }
+                        vm.list.map(function(item){
+
+                            var teste = angular.extend(item,{image: response.config.url});
+                            console.log("item",teste);
+                        })
+       
+                            // angular.extend(vm.list[key],{image: response.config.url});
+                            // console.log(vm.list);
+                 
+                        // for(let index = 1; index <= 20; index++){
+                        //         angular.extend(vm.list[index-1],{image: response.config.url});
+                        //     console.log(vm.list);
+                        //     console.log("index",index);
+                        // }
                   
                     });
                   
