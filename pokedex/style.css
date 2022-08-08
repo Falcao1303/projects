@@ -165,6 +165,8 @@
     margin-top: 20px;
     display:grid;
     grid-template-columns: auto auto auto;
+    border-bottom: #BDBDBD 2px solid;
+    width: 98%;
 }
 
 .line3{
@@ -202,12 +204,6 @@
     margin-top: 12px;
 }
 
-.line-pagination{
-    width: 100%;
-    left: 0;
-    background-color: gray;
-    height: 2px;
-}
 
 .index-page #arrow-right{
     cursor:pointer;

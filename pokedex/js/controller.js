@@ -26,53 +26,56 @@ function pokedexController($scope, $http, $rootScope, $location, $window) {
 
 
     function firstPage(){
-        
+        vm.searchLast = $http({
+            method: 'GET',
+            url: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20'
+        }).then(function successCallback(response) {
+            vm.list = response.data.results;
+                 for(let index = 0; index <= 19; index++){
+                    getImagens(vm.list[index]['url'],vm.list[index]);
+                 }
+                 vm.page = 1;
+        }
+     );
     }
 
-    function getImagens(){
-        
+    function getImagens(url,item){
+        vm.searchImages = $http({
+            method: 'GET',
+            url: url
+        }).then(function (response){
+                angular.extend(item,{image: response.data.sprites.front_shiny});
+        });    
     }
 
     function lastPage(){
-
+            vm.searchLast = $http({
+                method: 'GET',
+                url: 'https://pokeapi.co/api/v2/pokemon/?offset='+ vm.totalpages + '&limit=20'
+            }).then(function successCallback(response) {
+                vm.list = response.data.results;
+                     for(let index = 0; index <= 19; index++){
+                        getImagens(vm.list[index]['url'],vm.list[index]);
+                     }
+                     vm.page = vm.totalpages;
+            }
+         );
     }
 
 
     function nextPage(){
         vm.next = true;
-        vm.proxOffset = vm.offset + 40;
-            let offset =  vm.offset + 20;
+            vm.offset =  vm.offset + 20;
             vm.searchNext = $http({
                 method: 'GET',
-                url: 'https://pokeapi.co/api/v2/pokemon/?offset='+ offset + '&limit=20'
+                url: 'https://pokeapi.co/api/v2/pokemon/?offset='+ vm.offset + '&limit=20'
             }).then(function successCallback(response) {
                 vm.list = response.data.results;
-                for(let i = vm.offset; i <= vm.proxOffset; i++){
-                    vm.searchImages = $http({
-                        method: 'GET',
-                        url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+ i +'.png'
-                    }).then(function (response){
-                        vm.list.map(function(item){
-
-                            var teste = angular.extend(item,{image: response.config.url});
-                            console.log("item",teste);
-                        })
-       
-                            // angular.extend(vm.list[key],{image: response.config.url});
-                            // console.log(vm.list);
-                 
-                        // for(let index = 1; index <= 20; index++){
-                        //         angular.extend(vm.list[index-1],{image: response.config.url});
-                        //     console.log(vm.list);
-                        //     console.log("index",index);
-                        // }
-                  
-                    });
-                  
-                }
+                     for(let index = 0; index <= 19; index++){
+                        getImagens(vm.list[index]['url'],vm.list[index]);
+                     }
                 vm.next = false;
                 vm.page = vm.page + 1;
-                // vm.offset = vm.offset + 20;
             }
          );
     }
@@ -81,25 +84,25 @@ function pokedexController($scope, $http, $rootScope, $location, $window) {
         vm.next = false;
         vm.previous = true;
         let offset = vm.offset - 20;
+        if(offset >= 0){
             vm.searchPrevious = $http({
                 method: 'GET',
                 url: 'https://pokeapi.co/api/v2/pokemon/?offset='+ offset + '&limit=20'
             }).then(function (response) {
                 vm.list = response.data.results;
-                // for(let image = vm.offset; image <= 898; image-1){
-                //     vm.searchImages = $http({
-                //         method: 'GET',
-                //         url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+ image +'.png'
-                //     }).then(function (response){
-                //         angular.extend(vm.list[i-1],{image: response.config.url});
-                //     });
-    
-                // }
+                     for(let index = 0; index <= 19; index++){
+                        getImagens(vm.list[index]['url'],vm.list[index]);
+
+                     }
                 vm.next = false;
                 vm.page = vm.page - 1;
                 vm.offset = vm.offset - 20;
             }
          );
+        }else{
+            return;
+        }
+
     }
 
     function getList(){
