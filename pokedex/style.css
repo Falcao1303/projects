@@ -90,7 +90,7 @@
 .background{
     position: absolute;
     width: 64px;
-    height: 2670px;
+    height: 2870px;
     left: 0px;
     top: 80px;
     background: #F4F4F4;
@@ -146,6 +146,7 @@
     box-sizing: border-box;
     width: 98px;
     height: 96px;
+    margin-bottom: 10px;
     border: 1px solid #565656;
     border-radius: 4px;
 }
@@ -180,7 +181,7 @@
 
 .pagination{
     align-items: left;
-    top: 2690px;
+    top: 150px;
     position: absolute;
     width: 93%;
     height: 10px;
@@ -238,12 +239,18 @@
 }
 
 
+.line-footer{
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    top: 50px;
+    border: 5px solid black;
+}
 
 footer{
     position: absolute;
     width: 100%;
     height: 20px;
-    top: 2735px;
-    background-color: black;
+    top: 2740px;
 }
 

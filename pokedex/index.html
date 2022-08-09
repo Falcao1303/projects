@@ -44,31 +44,32 @@
 
             </div>
         </div>
-        <div class="pagination">
-            <div class="index-page">
-                <p>Página {{page}} de {{totalpages}} páginas </p>
-                <span id="arrow-left-start" class="material-symbols-outlined" ng-click="firstPage()">
-                    first_page
-                </span>
-                <span id="arrow-left"class="material-symbols-outlined" ng-click="previousPage()">
-                    chevron_left
-                </span>
-                <span id="arrow-right"class="material-symbols-outlined" ng-click="nextPage()">
-                    chevron_right
-                </span>
-                <span  id="arrow-right-end" class="material-symbols-outlined" ng-click="lastPage()">
-                    last_page
-                </span>
-            </div>
-            <div class="line2">
-            </div>
-        </div>    
+
     </div>
 
 
 </body>
 
 <footer>
+    <div class="pagination">
+        <div class="index-page">
+            <p>Página {{page}} de {{totalpages}} páginas </p>
+            <span id="arrow-left-start" class="material-symbols-outlined" ng-click="firstPage()">
+                first_page
+            </span>
+            <span id="arrow-left"class="material-symbols-outlined" ng-click="previousPage()">
+                chevron_left
+            </span>
+            <span id="arrow-right"class="material-symbols-outlined" ng-click="nextPage()">
+                chevron_right
+            </span>
+            <span  id="arrow-right-end" class="material-symbols-outlined" ng-click="lastPage()">
+                last_page
+            </span>
+        </div>
+        <div class="line-footer">
+        </div>
+    </div>    
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
 <script src="js/controller.js" type="text/javascript"></script>
