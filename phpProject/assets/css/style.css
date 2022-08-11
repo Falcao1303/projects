@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'roboto';
+}
+
+.flex{ display: flex; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.block { display: block; }
+.text-center{ text-align: center !important; }
+.w-25 { width: 25%; }
+.w-50 { width: 50%; }
+.w-75 { width: 75%; }
+.w-100{ width: 100%; }
+.no-pad { padding: 0 !important; }
+.no-marg { margin: 0 !important; }
+.pointer { cursor: pointer; }
+
+.mt-12{
+    margin-top: 12px;
+}
+
+.logo{
+    width: 100%;
+}
+
+.sidebar{
+    height: 100vh;
+    width: 150px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(35,127,236,1) 100%);
+}
+.sidebar-container{
+    padding: 15px;
+}
+
+.sidebar .logo{
+    color: #fff;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.sidebar .side-menu li{
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    border: solid 2px transparent;
+    transition: all ease .3s;
+    border-radius: 15px;
+}
+.sidebar .side-menu li.active,
+.sidebar .side-menu li:hover{
+    background-color: #0351ad;
+    border: solid 2px #ccc;
+}
+.sidebar .side-menu li a{
+    color: #fff;
+}
+
+.sidebar .side-menu li a i{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.topbar{
+    background-color: rgba(35,127,236,1);
+    color: #fff;;
+    padding: 10px ;
+    border-left: solid 1px rgb(75, 148, 233);
+}
+
+
+footer{
+    background-color: #03022e;
+    color: #fff;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.container{
+    background-color: #f1f1f1;
+}
+
+.content{
+    padding: 30px;
+    min-height: calc(100vh - 128px);
+}
+
+.title{
+    margin-bottom: 10px;
+}
+label{
+    margin-bottom: 5px;
+
+}
+
+nav{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.nav-button{
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: #fff;
+    min-width: 150px;
+    margin-right: 10px;
+    border: none;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    transition: all ease .3s;
+}
+
+.nav-button.active,
+.nav-button:hover{
+    background-color: #237fec;
+    color: #fff;
+}
+
+.card.vendas{
+    margin-top: 30px;
+}
+
+.card{
+    padding: 30px 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    min-width: 150px;
+    margin-right: 10px;
+    border: none;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+.input-group{
+    padding: 0 15px 10px 15px;
+}
+.input{
+    border-radius: 4px;
+    height: 35px;
+    border: solid 1px #ccc;
+    width: 100%;
+    padding: 0 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+.select{
+    border-radius: 4px;
+    height: 35px;
+    border: solid 1px #ccc;
+    width: 100%;
+}
+
+.btn-default{
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: #237fec;
+    color: #fff;
+    min-width: 150px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    transition: all ease .3s;
+}
+.btn-default:hover{
+    background-color: #0351ad
+}
+
+.btn-checkout{
+    background-color: #02bb02;
+}
+.btn-checkout:hover{
+    background-color: #069606;
+}
+.btn-cancel{
+    background-color: #ff0000;
+}
+.btn-cancel:hover{
+    background-color: #d20101;
+}
+
+.table{
+    padding: 15px;
+}
+table{
+    border: solid 1px #ccc;
+    width: 100%;
+}
+thead{
+    background-color: #f1f1f1;
+}
+tr{
+    border: soid 1px #ccc;
+}
+th, td{
+    /* margin: 5px; */
+    border-left: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    padding: 10px;
+}
+th:first-child, td:first-child{
+    border-left: none;
+}
+tr:last-child td{
+    border-bottom: none;
+}
+.table-action{
+    width: 70px;
+}
+
+.fa-pencil-alt{
+    color: green;
+    margin: 0 3px;
+}
+.fa-trash-alt{
+    color: red;
+    margin: 0 3px;
+}
