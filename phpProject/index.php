@@ -41,7 +41,13 @@ route('/venda/close', function () {
 
 
 if(isset($_GET['product'])){
-    route('/products/add/?product='.$_GET['product'], function () {
+    $product_cod = $_GET['code'];
+    $description = $_GET['product'];
+    $price = $_GET['price'];
+    $amount = $_GET['amount'];
+    $type = $_GET['type'];
+    $taxes = $_GET['taxes'];
+    route('/products/add/?amount='.$amount.'&code='.$product_cod.'&price='.$price.'&product='.$description.'&taxes='.$taxes.'&type='.$type, function () {
         $produtos = new ProductsController();
         $produtos->save();
     });

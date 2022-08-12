@@ -64,48 +64,55 @@
 
     <div class="row text-center">
       <div class="col-md-12 col-lg-12 align-items-center">
-        <h4 class="mb-3">Billing address</h4>
         <form class="needs-validation" novalidate>
           <div class="row g-3">
-            <div class="col-md-6 offset-md-3 ">
-              <label for="product" class="form-label">Product Description</label>
-              <input type="text" class="form-control" ng-model="productModel.product" id="product" placeholder="Description" value="" required>
+            <div class="col-md-2 offset-md-3 ">
+              <label for="product" class="form-label">Product Code</label>
+              <input type="text" class="form-control" ng-model="productModel.code" id="product" placeholder="Code" value="" required>
               <div class="invalid-feedback">
                 Valid Description is required.
               </div>
             </div>
 
-            <div class="col-md-2 offset-md-3 ">
+            <div class="col-md-3 offset-md-3 " style="margin-left:20px; width:30%">
               <label for="price" class="form-label">Price</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="price" placeholder="R$0,00" required>
+                <input type="text" class="form-control" ng-model="productModel.price" id="price" placeholder="R$0,00" required>
               <div class="invalid-feedback">
                   The price is required.
                 </div>
               </div>
             </div>
 
-            <div class="col-md-2 offset-md-2">
+            <div class="col-md-3 offset-md-3" style="width:15%">
               <label for="email" class="form-label">Amount</label>
-              <input type="number" class="form-control" id="amount" placeholder="0">
+              <input type="number" class="form-control" ng-model="productModel.amount" id="amount" placeholder="0">
               <div class="invalid-feedback">
                 Please enter a valid amount
               </div>
             </div>
 
-            <div class="col-md-2 offset-md-3">
+            <div class="col-md-3 offset-md-3" style="margin-left:10px; width:15%">
               <label for="taxes" class="form-label">Taxes</label>
-              <input type="text" class="form-control" id="address" placeholder="Taxes" required numeric-only>
+              <input type="text" class="form-control" ng-model="productModel.taxes" id="address" placeholder="Taxes" required numeric-only>
               <div class="invalid-feedback">
                 Please enter a valid value
               </div>
             </div>
 
-            <div class="col-md-2 offset-md-2">
+            <div class="col-md-2 offset-md-2" style="margin-left:10px; width:15%">
               <label for="type" class="form-label">Type</label>
-              <input type="text" class="form-control" id="type" placeholder="Type">
+              <input type="text" class="form-control" ng-model="productModel.type" id="type" placeholder="Type">
             </div>
           </div>
+
+          <div class="col-md-2 offset-md-3 " style="margin-left:350px;margin-top: 10px; width:40%">
+              <label for="product" class="form-label">Product Description</label>
+              <input type="text" class="form-control" ng-model="productModel.product" id="product" placeholder="Description" value="" required>
+              <div class="invalid-feedback">
+                Valid Description is required.
+              </div>
+            </div>
 
           <hr class="my-4">
 

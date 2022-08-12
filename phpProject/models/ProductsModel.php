@@ -2,7 +2,7 @@
 
 require_once("./config/DBConnection.php");
 
-class ProdutosModel extends DBConnection
+class ProductsModel extends DBConnection
 {
     protected $con;
 
@@ -16,9 +16,12 @@ class ProdutosModel extends DBConnection
 
     }
 
-    public function save($product)
+    public function save($product_cod, $description, $price, $amount, $type, $taxes)
     {
-  
+        $result = pg_query("INSERT INTO products (cod, description, price, amount, taxes,type_product)
+         VALUES ($product_cod, $description, $price, $amount, $type, $taxes)");
+
+         return $result;
     }
 
     public function findProduct($id)
