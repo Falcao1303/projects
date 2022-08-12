@@ -2,7 +2,7 @@
 
 require_once("./config/DBConnection.php");
 
-class VendasModel extends DBConnection
+class SalesModel extends DBConnection
 {
     protected $con;
 

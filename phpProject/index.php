@@ -5,7 +5,7 @@ require_once "controllers/TiposController.php";
 require_once "controllers/SalesController.php";
 
 route('/', function () {
-    include('view/login.php');
+    include('view/home.php');
 });
 
 route('/tipos', function () {

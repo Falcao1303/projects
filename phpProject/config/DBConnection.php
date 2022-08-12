@@ -9,7 +9,7 @@ class DBConnection
     {
         $dbuser = "postgres";
         $dbpass = "131303";
-        $dbname = "projects";
+        $dbname = "postgres";
         
         try 
         {

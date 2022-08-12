@@ -3,7 +3,7 @@
 session_start();
 require_once("config/Helper.php");
 
-require_once("./models/VendasModel.php");
+require_once("./models/SalesModel.php");
 
 class SalesController
 {
@@ -13,20 +13,13 @@ class SalesController
     
     public function __construct()
     {
-        $this->sell = new VendasModel();
+        $this->sell = new SalesModel();
         $this->products = new ProdutosModel();
-
-        
-        if (!isset($_SESSION['codVenda']) || $_SESSION['codVenda'] == null)
-        {
-            $_SESSION['codVenda'] = str_replace(array("-", " ", ":", "pm", "am"), "", date('YmdHis'));
-        }
-        
     }
 
     public function show()
     {
-        include('../view/vendas.php');
+        include('./view/sales.php');
     }
 
     public function save()

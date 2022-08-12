@@ -1,8 +1,10 @@
+<style>
 *{
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 center{
     border: solid 1px #ccc;
     background-color: #efefef;
@@ -15,30 +17,6 @@ center{
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 }
-p{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-input{
-    margin-bottom: 10px;
-    border: solid 1px #ccc;
-    padding: 10px;
-    display: block;
-    width: 80%;
-    text-align: center;
-}
-button{
-    width: 40%;
-    padding: 10px;
-    cursor: pointer;
-    background-color: #007BFF;
-    border: none;
-    transition: all ease .3s;
-    color: #fff;
-}
-button:hover{
-    background-color: #007bffb5;
-}
 
 
 @media screen and (min-width: 1024px){
@@ -47,3 +25,24 @@ button:hover{
         margin-top: 10%;
     }
 }
+
+</style>
+<?php include("includes/header.php"); ?>
+
+<body>
+
+    <center>
+
+        <head>
+            <h3>BEM VINDO AO SISTEMA DE GERENCIAMENTO PRODLOG</h3>
+                <a href="/vendas">
+                     <button type="button" class="btn btn-primary">Acessar</button>
+                </a>
+        </head>
+
+
+    </center>
+
+</body>
+
+</html>
