@@ -10,21 +10,20 @@ function systemController($scope, $http, $rootScope, $location, $window,httpdSer
     console.log($injector);
     console.log($scope);
     var vm = $scope;
-    vm.findRegister = findRegister;
+    vm.registerProduct = registerProduct;
     iniciarController();
 
     function iniciarController(){
-        vm.loginForm={
-            email:'',
-            password:'',
+        vm.productModel={
+            product : "",
         }
     }
 
-    // function findRegister(){
-    //     const params = vm.loginForm;
-    //     console.log(params);
-    //         httpdService.get('Laravel_Login', 'getUser',params,(response) =>{
-    //            console.log(response);
-    //     });
-    // }
+    function registerProduct(){
+        const params = vm.productModel;
+        console.log(params);
+            httpdService.get('Control_products_add', '',params,(response) =>{
+               console.log(response);
+        });
+    }
 }

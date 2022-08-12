@@ -2,7 +2,7 @@
 
 require_once "./models/ProdutosModel.php";
 
-class ProdutosController
+class ProductsController
 {
     public $products;
 
@@ -14,7 +14,7 @@ class ProdutosController
 
     public function show()
     {
-        include('./view/produtos.php');
+        include('./view/products.php');
     }
 
     public function getProducts()

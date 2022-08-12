@@ -1,6 +1,6 @@
 <?php
 require_once "config/Request.php";
-require_once "controllers/ProdutosController.php";
+require_once "controllers/ProductsController.php";
 require_once "controllers/TiposController.php";
 require_once "controllers/SalesController.php";
 
@@ -18,13 +18,13 @@ route('/tipos/add', function () {
     $tipos->save();
 });
 
-route('/produtos', function () {
-    $produtos = new ProdutosController();
+route('/products', function () {
+    $produtos = new ProductsController();
     $produtos->show();
 });
 
-route('/produtos/add', function () {
-    $produtos = new ProdutosController();
+route('/products/add', function () {
+    $produtos = new ProductsController();
     $produtos->save();
 });
 
@@ -38,6 +38,14 @@ route('/venda/close', function () {
     $vendas = new SalesController();
     $vendas->finishSell();
 });
+
+
+if(isset($_GET['product'])){
+    route('/products/add/?product='.$_GET['product'], function () {
+        $produtos = new ProductsController();
+        $produtos->save();
+    });
+}
 
 
 if (isset($_POST['codigo_venda']))
@@ -80,17 +88,17 @@ if (isset($_GET['id']))
     });
 
     route('produtos/find/?id='.$_GET['id'], function () {
-        $produtos = new ProdutosController();
+        $produtos = new ProductsController();
         $produtos->find($_GET['id']);
     });
 
     route('produtos/findjson/?id='.$_GET['id'], function () {
-        $produtos = new ProdutosController();
+        $produtos = new ProductsController();
         $produtos->findJson($_GET['id']);
     });
 
     route('/produtos/delete/?id='.$_GET['id'] , function () {
-        $produtos = new ProdutosController();
+        $produtos = new ProductsController();
         $produtos->delete($_GET['id']);
     });
 
