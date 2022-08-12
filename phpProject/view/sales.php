@@ -52,10 +52,10 @@
     </style>
 <?php include("includes/header.php"); ?>
 
-  <body class="bg-light">
+  <body class="bg-light" ng-app="system">
     
-<div class="container">
-  <main>
+<div class="container" ng-controller = "systemController" >
+  <main >
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../assets/img/cart.png" alt="" width="100" height="100">
       <h2>Products Register</h2>
@@ -95,7 +95,7 @@
 
             <div class="col-md-2 offset-md-3">
               <label for="taxes" class="form-label">Taxes</label>
-              <input type="text" class="form-control" id="address" placeholder="Taxes" required>
+              <input type="text" class="form-control" id="address" placeholder="Taxes" required numeric-only>
               <div class="invalid-feedback">
                 Please enter a valid value
               </div>
@@ -109,9 +109,10 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Save the register</button>
+          <button class="w-10 btn btn-primary btn-lg" type="submit">Save the register</button>
         </form>
       </div>
     </div>
   </main>
+    </body>
   <?php include("includes/footer.php") ?>

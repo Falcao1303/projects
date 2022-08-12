@@ -1,11 +1,11 @@
-var app = angular.module('script',['httpdService']);
+var app = angular.module('system',['httpdService']);
 
-app.controller('scriptController',scriptController)
+app.controller('systemController',systemController)
 
 
-scriptController.$inject = ['$scope', '$http', '$rootScope', '$location', '$window','httpdService'];
+systemController.$inject = ['$scope', '$http', '$rootScope', '$location', '$window','httpdService'];
 
-function scriptController($scope, $http, $rootScope, $location, $window,httpdService) {
+function systemController($scope, $http, $rootScope, $location, $window,httpdService) {
     var $injector = angular.injector();
     console.log($injector);
     console.log($scope);
