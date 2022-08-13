@@ -20,22 +20,23 @@ class ProductsController
     public function getProducts()
     {
         $result = $this->products->getProducts();
-        return $result;
+        echo json_encode(array('SUCCESS'=> TRUE,'PRODUCTS' => $result));
     }
 
     public function getProdutosDisponiveis()
     {
-        $result = $this->products->getProducts(true);
-        return $result;
+     
+        // $result = $this->products->getProducts(true);
+        // return $result;
     }
 
     public function save()
     {
         $product_cod = $_GET['code'];
-        $description = $_GET['product'];
+        $description = (string)$_GET['product'];
         $price = $_GET['price'];
         $amount = $_GET['amount'];
-        $type = $_GET['type'];
+        $type = (string)$_GET['type'];
         $taxes = $_GET['taxes'];
         $products = $this->products->save($product_cod, $description, $price, $amount, $type, $taxes);
         return $products;
@@ -51,12 +52,11 @@ class ProductsController
         die(json_encode($this->products->findProduct($id)));
     } 
 
-    public function delete($id)
+    public function delete()
     {
-        $this->products->deleteProduct($id);
-
-        header('location: /produtos');
-        exit();
+        $id = $_GET['cod'];
+        // $this->products->deleteProduct($id);
+        echo json_encode(array('SUCCESS'=> TRUE,'MESSAGE' => 'PRODUCT EXCLUDED!'));
     }
 }
 

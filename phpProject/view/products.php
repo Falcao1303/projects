@@ -120,6 +120,40 @@
         </form>
       </div>
     </div>
+    <div class="py-5 text-center">
+      <h4>Products List</h4>
+    </div>
+    <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="text-center" scope="col">Cod</th>
+            <th class="text-center" scope="col">Product</th>
+            <th class="text-center" scope="col">Type</th>
+            <th class="text-center" scope="col">Price un.</th>
+            <th class="text-center" scope="col">Total Price</th>
+            <th class="text-center" scope="col">Amount</th>
+            <th class="text-center" scope="col">Taxes</th>
+            <th class="text-center" scope="col">Total Taxes</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="product in products">
+            <th class="text-center" scope="row">{{product.cod}}</th>
+            <td class="text-center">{{product.product}}</td>
+            <td class="text-center">{{product.type_product}}</td>
+            <td class="text-center">{{product.price}}</td>
+            <td class="text-center">{{product.price}}</td>
+            <td class="text-center">{{product.amount}}</td>
+            <td class="text-center">{{product.taxes}}</td>
+            <td class="text-center">{{product.taxes}}</td>
+            <td class="text-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="button"><i class="fa-solid fa-pencil"></i></button>
+            <button type="button" class="btn btn-danger" ng-click="deleteProduct(product.cod)"data-bs-toggle="button"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
   </main>
     </body>
   <?php include("includes/footer.php") ?>
