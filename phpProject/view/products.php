@@ -67,56 +67,42 @@
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-md-2 offset-md-3 ">
-              <label for="product" class="form-label">Product Code</label>
-              <input type="text" class="form-control" ng-model="productModel.code" id="product" placeholder="Code" value="" required>
-              <div class="invalid-feedback">
-                Valid Description is required.
-              </div>
+              <label for="product" class="form-label">Customer Code</label>
+              <input type="text" class="form-control" ng-model="productModel.cod" id="product" placeholder="Code" value="" required>
             </div>
 
             <div class="col-md-3 offset-md-3 " style="margin-left:20px; width:30%">
-              <label for="price" class="form-label">Price</label>
+              <label for="price" class="form-label">Product</label>
               <div class="input-group has-validation">
                 <input type="text" class="form-control" ng-model="productModel.price" id="price" placeholder="R$0,00" required>
-              <div class="invalid-feedback">
-                  The price is required.
-                </div>
               </div>
             </div>
 
             <div class="col-md-3 offset-md-3" style="width:15%">
               <label for="email" class="form-label">Amount</label>
               <input type="number" class="form-control" ng-model="productModel.amount" id="amount" placeholder="0">
-              <div class="invalid-feedback">
-                Please enter a valid amount
-              </div>
             </div>
 
             <div class="col-md-3 offset-md-3" style="margin-left:10px; width:15%">
               <label for="taxes" class="form-label">Taxes</label>
               <input type="text" class="form-control" ng-model="productModel.taxes" id="address" placeholder="Taxes" required numeric-only>
-              <div class="invalid-feedback">
-                Please enter a valid value
-              </div>
             </div>
 
             <div class="col-md-2 offset-md-2" style="margin-left:10px; width:15%">
               <label for="type" class="form-label">Type</label>
-              <input type="text" class="form-control" ng-model="productModel.type" id="type" placeholder="Type">
+              <input type="text" class="form-control" ng-model="productModel.type_product" id="type" placeholder="Type">
             </div>
           </div>
 
           <div class="col-md-2 offset-md-3 " style="margin-left:350px;margin-top: 10px; width:40%">
               <label for="product" class="form-label">Product Description</label>
               <input type="text" class="form-control" ng-model="productModel.product" id="product" placeholder="Description" value="" required>
-              <div class="invalid-feedback">
-                Valid Description is required.
-              </div>
             </div>
 
           <hr class="my-4">
 
-          <button class="w-10 btn btn-primary btn-lg" ng-click="registerProduct()" type="submit">Save the register</button>
+          <button ng-hide="edit"class="w-10 btn btn-primary btn-lg" ng-click="registerProduct()" type="submit">Save the register</button>
+          <button ng-hide="!edit" class="w-10 btn btn-success btn-lg" ng-click="updateProduct()" type="submit">Update the register</button>
         </form>
       </div>
     </div>
@@ -148,7 +134,7 @@
             <td class="text-center">{{product.taxes}}</td>
             <td class="text-center">{{product.taxes}}</td>
             <td class="text-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="button"><i class="fa-solid fa-pencil"></i></button>
+            <button type="button" class="btn btn-primary" ng-click=editProduct(product.cod) data-bs-toggle="button"><i class="fa-solid fa-pencil"></i></button>
             <button type="button" class="btn btn-danger" ng-click="deleteProduct(product.cod)"data-bs-toggle="button"><i class="fa-solid fa-trash-can"></i></button>
             </td>
           </tr>

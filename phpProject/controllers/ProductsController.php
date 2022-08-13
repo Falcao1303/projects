@@ -23,20 +23,32 @@ class ProductsController
         echo json_encode(array('SUCCESS'=> TRUE,'PRODUCTS' => $result));
     }
 
-    public function getProdutosDisponiveis()
+    public function getProduct()
     {
-     
-        // $result = $this->products->getProducts(true);
-        // return $result;
+        $id = $_GET['cod'];
+        $result = $this->products->getProductId($id);
+        echo json_encode(array('SUCCESS'=> TRUE,'PRODUCT' => $result));
+    }
+
+    public function updateProduct(){
+        $id = $_GET['id'];
+        $product_cod = $_GET['cod'];
+        $description = (string)$_GET['product'];
+        $price = $_GET['price'];
+        $amount = $_GET['amount'];
+        $type = (string)$_GET['type_product'];
+        $taxes = $_GET['taxes'];
+        $this->products->update($id,$product_cod, $description, $price, $amount, $type, $taxes);
+        echo json_encode(array('SUCCESS'=> TRUE,'MESSAGE' => 'Product updated successfully'));
     }
 
     public function save()
     {
-        $product_cod = $_GET['code'];
+        $product_cod = $_GET['cod'];
         $description = (string)$_GET['product'];
         $price = $_GET['price'];
         $amount = $_GET['amount'];
-        $type = (string)$_GET['type'];
+        $type = (string)$_GET['type_product'];
         $taxes = $_GET['taxes'];
         $products = $this->products->save($product_cod, $description, $price, $amount, $type, $taxes);
         return $products;
@@ -55,7 +67,7 @@ class ProductsController
     public function delete()
     {
         $id = $_GET['cod'];
-        // $this->products->deleteProduct($id);
+        $this->products->deleteProduct($id);
         echo json_encode(array('SUCCESS'=> TRUE,'MESSAGE' => 'PRODUCT EXCLUDED!'));
     }
 }

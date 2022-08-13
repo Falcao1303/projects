@@ -14,7 +14,7 @@ class SalesController
     public function __construct()
     {
         $this->sell = new SalesModel();
-        $this->products = new ProdutosModel();
+        $this->products = new ProductsModel();
     }
 
     public function show()
