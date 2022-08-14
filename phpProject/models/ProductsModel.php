@@ -49,6 +49,13 @@ class ProductsModel extends DBConnection
          return $result;
     }
 
+    public function getProductsCart(){
+        $sql = "SELECT * FROM products_cart";
+        $result = pg_query($sql);
+        $products = pg_fetch_all($result);
+        return $products;
+    }
+
     public function findProduct($id)
     {
 

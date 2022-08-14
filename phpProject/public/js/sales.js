@@ -9,36 +9,37 @@ function salesController($scope, $http, $rootScope, $location, $window) {
     var $injector = angular.injector();
     var vm = $scope;
     vm.saveTheSale = saveTheSale;
-    vm.deleteProduct = deleteProduct;
-    vm.updateProduct = updateProduct;
-    vm.getProduct = getProduct;
+    vm.deleteSale = deleteSale;
+    vm.getSales = getSales;
     vm.editProduct = editProduct;
     vm.disableInput = disableInput;
+    vm.addToCart= addToCart;
+    vm.getProductsCart = getProductsCart;
+    vm.saveTheSale = saveTheSale;
     iniciarController();
 
     function iniciarController(){
-        vm.saleModel={
-
+        vm.saleCartModel={
+            id_sale: 0,
+            product_cart: 0,
+            amount: 0
         }
-        console.log("teste controller");
        getProducts(); 
         vm.edit = false;
     }
 
     function saveTheSale(){
-        const params = vm.saleModel;
-        console.log("teste controller");
-        // vm.saveSale = $http({
-        //     method: 'GET',
-        //     url: '/products/add',
-        //     params: params
-        // }).then(function successCallback(response) {
-        //     iniciarController();
-        // });
+        let id_sale = vm.saleCartModel.id_sale;
+         vm.saveSale = $http({
+             method: 'GET',
+             url: '/products/saveSale',
+             params: {id_sale: id_sale}
+         }).then(function successCallback(response) {
+    
+         });
     }
 
     function disableInput(){
-        console.log("testeblur",$('.sale_id'));
         $('#sale_id').prop('disabled', true)
     }
 
@@ -52,7 +53,33 @@ function salesController($scope, $http, $rootScope, $location, $window) {
             });
     }
 
-    function deleteProduct(id){
+    function getProductsCart(){
+        let id_sale = vm.saleCartModel.id_sale;
+        vm.getCartProducts = $http({
+            method: 'GET',
+            url: '/products/getProductsCart',
+            params: {id_sale: id_sale}
+        }).then(function successCallback(response) {
+            vm.productsCart = response.data['PRODUCTS'];
+        }); 
+    }
+
+    function addToCart(){
+        const params = vm.saleCartModel;
+        console.log("params",params);
+        vm.saveSale = $http({
+            method: 'GET',
+            url: '/sales/addToCart',
+            params: params
+        }).then(function successCallback(response) {
+            getProductsCart();
+            // iniciarController();
+        }).catch(function errorCallback(response) {
+            console.log(response);
+        });
+    }
+
+    function deleteSale(id){
         vm.deleteProd = $http({
             method: 'GET',
             url: '/products/delete',
@@ -64,11 +91,13 @@ function salesController($scope, $http, $rootScope, $location, $window) {
 
     }
 
-    function getProduct(id){
-        vm.getProd = $http({
+
+
+    function getSales(){
+        vm.getSales = $http({
             method: 'GET',
-            url: '/products/getProduct',
-            params: {cod:id, edit:vm.edit}
+            url: '/products/getSales',
+            params:''
         }).then(function successCallback(response) {
             if(vm.edit == true){
             response.data['PRODUCT'][0]['amount'] = parseInt(response.data['PRODUCT'][0]['amount']);    

@@ -51,6 +51,29 @@ if(isset($_GET['product'])){
     });
 }
 
+
+if(isset($_GET['id_sale'])){
+    $amount = !isset($_GET['amount']) ? 0 : $_GET['amount'];
+    $product_cart = !isset($_GET['product_cart']) ? 0 : $_GET['product_cart'];
+    $id = !isset($_GET['id_sale']) ? 0 : $_GET['id_sale'];
+    route('sales/addToCart?amount='.$amount.'&id_sale='.$id.'&product_cart='.$product_cart, function () {
+        $sales = new SalesController();
+        $sales->saveToTheCart();
+    });
+
+    route('/products/getProductsCart?id_sale='.$id, function () {
+        $sales = new SalesController();
+        $sales->getProductsCart();
+    });
+
+    route('/products/saveSale?id_sale='.$id, function () {
+        $sales = new SalesController();
+        $sales->saveSale();
+    });
+    
+
+}
+
 if(isset($_GET['cod'])){
     route('/products/delete?cod='.$_GET['cod'] , function () {
         $products = new ProductsController();
@@ -69,19 +92,6 @@ route('/products/getProducts', function () {
     $produtos = new ProductsController();
     $produtos->getProducts();
 });
-
-
-
-
-if (isset($_POST['codigo_venda']))
-{
-    route('/vendas/add', function () {
-        $vendas = new SalesController();
-        $vendas->save();
-    });
-
-}
-
 
 if (isset($_GET['id']))
 {
