@@ -2,8 +2,8 @@
 
 session_start();
 require_once("config/Helper.php");
-
-// require_once("./models/SalesModel.php");
+require_once "./models/ProductsModel.php";
+require_once("./models/SalesModel.php");
 
 class SalesController
 {
@@ -13,8 +13,8 @@ class SalesController
     
     public function __construct()
     {
-        // $this->sell = new SalesModel();
-        // $this->products = new ProductsModel();
+        $this->sell = new SalesModel();
+        $this->products = new ProductsModel();
         
     }
 
@@ -29,35 +29,33 @@ class SalesController
         $amount = $_GET['amount'];
         $product_cart = $_GET['product_cart'];
         $id = $_GET['id_sale'];
-        // $getDetailProduct = $this->products->getProductId($product_cart);
-        // pega o valor do produto para adicionar no carrinho
-        // $this->sell->saveToTheCart($amount, $product_cart, $id);
+        $getDetailProduct = $this->products->getProductId($product_cart);
+        $price = str_replace('R$ ','',$getDetailProduct[0]['price']);
+        $subtotal = $amount * floatval($price);
+        $this->sell->saveToTheCart($amount, $product_cart, $id,$subtotal);
         echo json_encode(array('success' => true));
     }
 
     public function getProductsCart(){
         $id = $_GET['id_sale'];
-        // $products = $this->sell->getProductsCart($id);
-        // echo json_encode(array('success'=> true,'products'=>$products));
+        $products = $this->sell->getProductsCart($id);
+        echo json_encode(array('success'=> true,'products'=>$products));
     }
 
     public function saveSale(){
         $id = $_GET['id_sale'];
-        // fazer query para pegar venda e total lá do carrinho
-       // $this->sell->getSale($id);
-    //query para pegar o resultado e salvar em uma tabela só com venda e totais
-    echo json_encode(array('success'=> true,'sales'=>'sales'));
+       $getSale = $this->sell->getSale($id);
+       $amount = $getSale[0]['amount'];
+       $total = $getSale[0]['sub_total'];
+       $saveSale = $this->sell->saveSale($id,$amount,$total);
+    echo json_encode(array('success'=> true,'sales'=>$saveSale,'message'=>'Sale id '.$id. 'Closed!'));
     }
     
 
     public function getSales(){
-        //$sales = $this->sell->getSales();
-        echo json_encode(array('success'=> true,'sales'=>'sales'));
+        $sales = $this->sell->getSales();
+        echo json_encode(array('success'=> true,'sales'=>$sales));
     }
 
-    public function cancel()
-    {
-
-    }
 
 }

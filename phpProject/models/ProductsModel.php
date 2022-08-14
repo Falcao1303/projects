@@ -49,42 +49,10 @@ class ProductsModel extends DBConnection
          return $result;
     }
 
-    public function getProductsCart(){
-        $sql = "SELECT * FROM products_cart";
-        $result = pg_query($sql);
-        $products = pg_fetch_all($result);
-        return $products;
-    }
-
-    public function findProduct($id)
-    {
-
-    }
-
-    public function findProductJson($id)
-    {
-     
-    }
-
-    public function hasProduct($nome)
-    {
-
-    }
-
     public function deleteProduct($id)
     {
         $sql = "DELETE FROM products WHERE cod = $id";
         $result = pg_query($sql);
         return $result;
-    }
-
-    public function updateStock($id_product, $quantity)
-    {
-
-    }
-
-    public function devolution($id, $qttyReturned)
-    {
-           
     }
 }

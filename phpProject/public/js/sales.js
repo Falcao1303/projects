@@ -11,7 +11,6 @@ function salesController($scope, $http, $rootScope, $location, $window) {
     vm.saveTheSale = saveTheSale;
     vm.deleteSale = deleteSale;
     vm.getSales = getSales;
-    vm.editProduct = editProduct;
     vm.disableInput = disableInput;
     vm.addToCart= addToCart;
     vm.getProductsCart = getProductsCart;
@@ -24,7 +23,7 @@ function salesController($scope, $http, $rootScope, $location, $window) {
             product_cart: 0,
             amount: 0
         }
-       getProducts(); 
+       getSales(); 
         vm.edit = false;
     }
 
@@ -35,7 +34,8 @@ function salesController($scope, $http, $rootScope, $location, $window) {
              url: '/products/saveSale',
              params: {id_sale: id_sale}
          }).then(function successCallback(response) {
-    
+                swal('Success!', 'Sale closed', 'success');
+                getSales();
          });
     }
 
@@ -60,18 +60,18 @@ function salesController($scope, $http, $rootScope, $location, $window) {
             url: '/products/getProductsCart',
             params: {id_sale: id_sale}
         }).then(function successCallback(response) {
-            vm.productsCart = response.data['PRODUCTS'];
+            vm.productsCart = response.data['products'];
         }); 
     }
 
     function addToCart(){
         const params = vm.saleCartModel;
-        console.log("params",params);
         vm.saveSale = $http({
             method: 'GET',
             url: '/sales/addToCart',
             params: params
         }).then(function successCallback(response) {
+            $cart = response.data['PRODUCTS'];
             getProductsCart();
             // iniciarController();
         }).catch(function errorCallback(response) {
@@ -99,20 +99,11 @@ function salesController($scope, $http, $rootScope, $location, $window) {
             url: '/products/getSales',
             params:''
         }).then(function successCallback(response) {
-            if(vm.edit == true){
-            response.data['PRODUCT'][0]['amount'] = parseInt(response.data['PRODUCT'][0]['amount']);    
-            vm.productModel = response.data['PRODUCT'][0];
-
-            }else{
-                vm.products = response.data['PRODUCT'];
-            }
+            vm.sales = response.data['sales'];
         });
     }
 
-    function editProduct(id){
-        vm.edit = true;
-        getProduct(id);
-    }
+
 
     function updateProduct(){
         delete vm.productModel['created_at'];
@@ -123,7 +114,7 @@ function salesController($scope, $http, $rootScope, $location, $window) {
             url: '/products/update',
             params: params
         }).then(function successCallback(response) {
-            console.log("response",response);
+
             swal("Sucess!", response.data.MESSAGE, "success");
            iniciarController();
         });

@@ -1,6 +1,6 @@
 <?php
 
-// require_once "./models/ProductsModel.php";
+require_once "./models/ProductsModel.php";
 
 class ProductsController
 {
@@ -8,7 +8,7 @@ class ProductsController
 
     public function __construct() 
     {
-        // $this->products = new ProductsModel();
+        $this->products = new ProductsModel();
         
     }
 
@@ -19,15 +19,15 @@ class ProductsController
 
     public function getProducts()
     {
-        // $result = $this->products->getProducts();
-        // echo json_encode(array('SUCCESS'=> TRUE,'PRODUCTS' => $result));
+        $result = $this->products->getProducts();
+        echo json_encode(array('SUCCESS'=> TRUE,'PRODUCTS' => $result));
     }
 
     public function getProduct()
     {
         $id = $_GET['cod'];
-        // $result = $this->products->getProductId($id);
-        // echo json_encode(array('SUCCESS'=> TRUE,'PRODUCT' => $result));
+        $result = $this->products->getProductId($id);
+        echo json_encode(array('SUCCESS'=> TRUE,'PRODUCT' => $result));
     }
 
     public function updateProduct(){
@@ -50,13 +50,13 @@ class ProductsController
         $amount = $_GET['amount'];
         $type = (string)$_GET['type_product'];
         $taxes = $_GET['taxes'];
-        // $products = $this->products->save($product_cod, $description, $price, $amount, $type, $taxes);
-        // return $products;
+        $products = $this->products->save($product_cod, $description, $price, $amount, $type, $taxes);
+        return $products;
     }
 
     public function find($id)
     {
-        // return $this->products->findProduct($id);
+        return $this->products->findProduct($id);
     } 
 
     public function findJson($id)
@@ -67,8 +67,8 @@ class ProductsController
     public function delete()
     {
         $id = $_GET['cod'];
-        // $this->products->deleteProduct($id);
-        // echo json_encode(array('SUCCESS'=> TRUE,'MESSAGE' => 'PRODUCT EXCLUDED!'));
+        $this->products->deleteProduct($id);
+        echo json_encode(array('SUCCESS'=> TRUE,'MESSAGE' => 'PRODUCT EXCLUDED!'));
     }
 }
 

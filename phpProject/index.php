@@ -31,6 +31,11 @@ route('/products', function () {
     $produtos->show();
 });
 
+route('/products/getSales', function () {
+    $sales = new SalesController();
+    $sales->getSales();
+});
+
 //back-end routes
 
 if(isset($_GET['product'])){

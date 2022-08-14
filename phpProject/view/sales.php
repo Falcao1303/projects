@@ -74,8 +74,7 @@
               <label for="price" class="form-label">Product</label>
               <select class="form-select" ng-model="saleCartModel.product_cart" aria-label="Select a product">
                     <option selected>Select a Product</option>
-                    <option value=2>teste</option>
-                    <option ng-repeat="product in products" value="product.product">{{product.product}} - {{product.price}}</option>
+                    <option ng-repeat="product in products" value="{{product.cod}}">{{product.product}} - {{product.price}}</option>
                 </select>
             </div>
             <div class="col-2" style="width:15%">
@@ -89,9 +88,25 @@
           </div>
           <div class="row g-3 justify-content-center" style="margin-top:10px">
             <h2>Cart</h2>
-              <ul class="list-group" style="width:50%;">
-                    <li class="list-group-item">An item</li>
-              </ul>
+            <p  ng-if="productsCart.length == null">The shop cart is empty</p>
+            <table ng-if="productsCart.length > 0"class="table table-striped">
+                        <thead>
+                        <tr>
+                          <th class="text-center" scope="col">Sale Id</th>
+                          <th class="text-center" scope="col">Product</th>
+                          <th class="text-center" scope="col">Amount</th>
+                          <th class="text-center" scope="col">Sub Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="item in productsCart">
+                          <th class="text-center" scope="row">{{item.sale_id}}</th>
+                          <td class="text-center">{{item.product}}</td>
+                          <td class="text-center">{{item.amount}}</td>
+                          <td class="text-center">{{item.sub_total}}</td>
+                        </tr>
+                      </tbody>
+                  </table>
           </div>    
           <hr class="my-4">
           <div class="row g-2 justify-content-center">
@@ -108,31 +123,16 @@
     <table class="table table-striped">
           <thead>
           <tr>
-            <th class="text-center" scope="col">Cod</th>
-            <th class="text-center" scope="col">Product</th>
-            <th class="text-center" scope="col">Type</th>
-            <th class="text-center" scope="col">Price un.</th>
-            <th class="text-center" scope="col">Total Price</th>
-            <th class="text-center" scope="col">Amount</th>
-            <th class="text-center" scope="col">Taxes</th>
-            <th class="text-center" scope="col">Total Taxes</th>
-            <th class="text-center" scope="col">Action</th>
+            <th class="text-center" scope="col">Sale Id</th>
+            <th class="text-center" scope="col">Amount (un)</th>
+            <th class="text-center" scope="col">Total(R$)</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="product in products">
-            <th class="text-center" scope="row">{{product.cod}}</th>
-            <td class="text-center">{{product.product}}</td>
-            <td class="text-center">{{product.type_product}}</td>
-            <td class="text-center">{{product.price}}</td>
-            <td class="text-center">{{product.price}}</td>
-            <td class="text-center">{{product.amount}}</td>
-            <td class="text-center">{{product.taxes}}</td>
-            <td class="text-center">{{product.taxes}}</td>
-            <td class="text-center">
-            <button type="button" class="btn btn-primary" ng-click=editProduct(product.cod) data-bs-toggle="button"><i class="fa-solid fa-pencil"></i></button>
-            <button type="button" class="btn btn-danger" ng-click="deleteProduct(product.cod)"data-bs-toggle="button"><i class="fa-solid fa-trash-can"></i></button>
-            </td>
+          <tr ng-repeat="sale in sales">
+            <th class="text-center" scope="row">{{sale.id}}</th>
+            <td class="text-center">{{sale.id}}</td>
+            <td class="text-center">{{sale.sale_total}}</td>
           </tr>
         </tbody>
     </table>
