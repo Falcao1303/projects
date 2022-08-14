@@ -54,7 +54,7 @@
 
   <body class="bg-light" ng-app="system">
     
-<div class="container" ng-controller = "systemController" >
+<div class="container" style='margin-left:200px;' ng-controller = "systemController" >
   <main >
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../assets/img/cart.png" alt="" width="100" height="100">

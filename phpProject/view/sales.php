@@ -53,8 +53,8 @@
 <?php include("includes/header.php"); ?>
 
   <body class="bg-light" ng-app="sales">
-    
-<div class="container" ng-controller = "salesController" >
+   
+<div class="container" style='margin-left:200px;' ng-controller = "salesController" >
   <main >
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../assets/img/cart.png" alt="" width="100" height="100">
@@ -68,22 +68,23 @@
           <div class="row g-3 justify-content-center">
             <div class="col-2" style="width:10%">
               <label for="product" class="form-label">Sale Code</label>
-              <input type="text" class="form-control" ng-model="productModel.cod" id="sale_id" ng-blur="disableInput();" placeholder="Code" value="" required>
+              <input type="text" class="form-control" ng-model="saleCartModel.id_sale" id="sale_id" ng-blur="disableInput();" placeholder="Code" value="" required>
             </div>
             <div class="col-2" style="margin-left:30px; width:30%">
               <label for="price" class="form-label">Product</label>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" ng-model="saleCartModel.product_cart" aria-label="Select a product">
                     <option selected>Select a Product</option>
-                    <option ng-repeat="product in products" value="product.cod">{{product.product}} - {{product.price}}</option>
+                    <option value=2>teste</option>
+                    <option ng-repeat="product in products" value="product.product">{{product.product}} - {{product.price}}</option>
                 </select>
             </div>
             <div class="col-2" style="width:15%">
               <label for="email" class="form-label">Amount</label>
-              <input type="number" class="form-control" ng-model="productModel.amount" id="amount" placeholder="0">
+              <input type="number" class="form-control" ng-model="saleCartModel.amount" id="amount" placeholder="0">
             </div>
             <div class="col-1" >
               <label for="email" class="form-label">Add to cart</label>
-              <button type="button" class="btn btn-primary" ng-click=addToCart(product.cod) data-bs-toggle="button"><i class="fa-solid fa-cart-arrow-down"></i></button>
+              <button type="button" class="btn btn-primary" ng-click=addToCart() data-bs-toggle="button"><i class="fa-solid fa-cart-arrow-down"></i></button>
             </div>
           </div>
           <div class="row g-3 justify-content-center" style="margin-top:10px">

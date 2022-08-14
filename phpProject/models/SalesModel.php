@@ -1,6 +1,6 @@
 <?php
 
-require_once("./config/DBConnection.php");
+// require_once("./config/DBConnection.php");
 
 class SalesModel extends DBConnection
 {
