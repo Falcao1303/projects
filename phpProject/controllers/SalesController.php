@@ -15,6 +15,7 @@ class SalesController
     {
         $this->sell = new SalesModel();
         $this->products = new ProductsModel();
+        
     }
 
     public function show()

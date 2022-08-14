@@ -52,9 +52,9 @@
     </style>
 <?php include("includes/header.php"); ?>
 
-  <body class="bg-light" ng-app="system">
+  <body class="bg-light" ng-app="sales">
     
-<div class="container" ng-controller = "systemController" >
+<div class="container" ng-controller = "salesController" >
   <main >
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../assets/img/cart.png" alt="" width="100" height="100">
@@ -65,43 +65,39 @@
     <div class="row text-center">
       <div class="col-md-12 col-lg-12 align-items-center">
         <form class="needs-validation" novalidate>
-          <div class="row g-3">
-            <div class="col-md-2 offset-md-3 ">
+          <div class="row g-3 justify-content-center">
+            <div class="col-2" style="width:10%">
               <label for="product" class="form-label">Sale Code</label>
-              <input type="text" class="form-control" ng-model="productModel.cod" id="product" placeholder="Code" value="" required>
+              <input type="text" class="form-control" ng-model="productModel.cod" id="sale_id" ng-blur="disableInput();" placeholder="Code" value="" required>
             </div>
-
-            <div class="col-md-3 offset-md-3 " style="margin-left:20px; width:30%">
-              <label for="price" class="form-label">Price</label>
-              <div class="input-group has-validation">
-                <input type="text" class="form-control" ng-model="productModel.price" id="price" placeholder="R$0,00" required>
-              </div>
+            <div class="col-2" style="margin-left:30px; width:30%">
+              <label for="price" class="form-label">Product</label>
+              <select class="form-select" aria-label="Default select example">
+                    <option selected>Select a Product</option>
+                    <option ng-repeat="product in products" value="product.cod">{{product.product}} - {{product.price}}</option>
+                </select>
             </div>
-
-            <div class="col-md-3 offset-md-3" style="width:15%">
+            <div class="col-2" style="width:15%">
               <label for="email" class="form-label">Amount</label>
               <input type="number" class="form-control" ng-model="productModel.amount" id="amount" placeholder="0">
             </div>
-
-            <div class="col-md-3 offset-md-3" style="margin-left:10px; width:15%">
-              <label for="taxes" class="form-label">Taxes</label>
-              <input type="text" class="form-control" ng-model="productModel.taxes" id="address" placeholder="Taxes" required numeric-only>
-            </div>
-
-            <div class="col-md-2 offset-md-2" style="margin-left:10px; width:15%">
-              <label for="type" class="form-label">Type</label>
-              <input type="text" class="form-control" ng-model="productModel.type_product" id="type" placeholder="Type">
+            <div class="col-1" >
+              <label for="email" class="form-label">Add to cart</label>
+              <button type="button" class="btn btn-primary" ng-click=addToCart(product.cod) data-bs-toggle="button"><i class="fa-solid fa-cart-arrow-down"></i></button>
             </div>
           </div>
-
-          <div class="col-md-2 offset-md-3 " style="margin-left:350px;margin-top: 10px; width:40%">
-              <label for="product" class="form-label">Product Description</label>
-              <input type="text" class="form-control" ng-model="productModel.product" id="product" placeholder="Description" value="" required>
-            </div>
-
+          <div class="row g-3 justify-content-center" style="margin-top:10px">
+            <h2>Cart</h2>
+              <ul class="list-group" style="width:50%;">
+                    <li class="list-group-item">An item</li>
+              </ul>
+          </div>    
           <hr class="my-4">
+          <div class="row g-2 justify-content-center">
+              <button  ng-hide="edit"class="col-md-2 btn btn-primary btn-md" ng-click="saveTheSale()" type="submit">Finish the Sale</button>
+          </div>  
+          
 
-          <button ng-hide="edit"class="w-10 btn btn-primary btn-lg" ng-click="registerProduct()" type="submit">Finish the Sale</button>
         </form>
       </div>
     </div>
@@ -140,5 +136,6 @@
         </tbody>
     </table>
   </main>
+</div>
     </body>
   <?php include("includes/footer.php") ?>

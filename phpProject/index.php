@@ -70,11 +70,6 @@ route('/products/getProducts', function () {
     $produtos->getProducts();
 });
 
-route('/venda/close', function () {
-    $vendas = new SalesController();
-    $vendas->finishSell();
-});
-
 
 
 
@@ -88,21 +83,6 @@ if (isset($_POST['codigo_venda']))
 }
 
 
-// if (isset($_GET['cod']))
-// {
-    
-//     route('/venda/?cod='.$_GET['cod'], function () {
-//         $vendas = new SalesController();
-//         $vendas->show();
-//     });
-    
-//     route('/venda/cancel/?cod='.$_GET['cod'], function(){
-//         $vendas = new SalesController();
-//         $vendas->cancel();
-        
-//     });
-// }
-
 if (isset($_GET['id']))
 {
 
@@ -112,29 +92,6 @@ if (isset($_GET['id']))
     });
 
 
-
-    route('produtos/find/?id='.$_GET['id'], function () {
-        $produtos = new ProductsController();
-        $produtos->find($_GET['id']);
-    });
-
-    route('produtos/findjson/?id='.$_GET['id'], function () {
-        $produtos = new ProductsController();
-        $produtos->findJson($_GET['id']);
-    });
-
-    route('/produtos/delete/?id='.$_GET['id'] , function () {
-        $produtos = new ProductsController();
-        $produtos->delete($_GET['id']);
-    });
-
-    if (isset($_GET['cod_venda']))
-    {
-        route('/vendas/delete/?id='.$_GET['id'].'&cod_venda='.$_GET['cod_venda'] , function () {
-            $vendas = new SalesController();
-            $vendas->delete($_GET['id'], $_GET['cod_venda']);
-        });
-    }
 }
 
 

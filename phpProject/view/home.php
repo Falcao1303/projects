@@ -35,7 +35,7 @@ center{
 
         <head>
             <h3>BEM VINDO AO SISTEMA DE GERENCIAMENTO PRODLOG</h3>
-                <a href="/vendas">
+                <a href="/sales">
                      <button type="button" class="btn btn-primary">Acessar</button>
                 </a>
         </head>
