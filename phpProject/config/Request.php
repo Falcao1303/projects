@@ -29,7 +29,6 @@ function dispatch($action, callable $callback)
 {
     global $routes;
     $action = trim($action, '/');
-
     $callback = $routes[$action];
 
     echo call_user_func($callback);

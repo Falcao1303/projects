@@ -67,14 +67,14 @@
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-md-2 offset-md-3 ">
-              <label for="product" class="form-label">Customer Code</label>
+              <label for="product" class="form-label">Product Code</label>
               <input type="text" class="form-control" ng-model="productModel.cod" id="product" placeholder="Code" value="" required>
             </div>
 
             <div class="col-md-3 offset-md-3 " style="margin-left:20px; width:30%">
               <label for="price" class="form-label">Product</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" ng-model="productModel.price" id="price" placeholder="R$0,00" required>
+                <input type="text" class="form-control" ng-model="productModel.price" id="price" placeholder="0.00" required>
               </div>
             </div>
 

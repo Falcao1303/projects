@@ -20,6 +20,9 @@ class ProductsController
     public function getProducts()
     {
         $result = $this->products->getProducts();
+        foreach ($result as $key => $value) {
+            $result[$key]['price'] = number_format($value['price'], 2, ',', '.');
+        }
         echo json_encode(array('SUCCESS'=> TRUE,'PRODUCTS' => $result));
     }
 
@@ -27,6 +30,10 @@ class ProductsController
     {
         $id = $_GET['cod'];
         $result = $this->products->getProductId($id);
+        if($_GET['edit'] == 'true'){
+            $result[0]['price'] = str_replace(',','.',str_replace('R$','',$result[0]['price'])); 
+            $result[0]['taxes'] = str_replace(',','.',str_replace('R$','',$result[0]['taxes']));
+        }
         echo json_encode(array('SUCCESS'=> TRUE,'PRODUCT' => $result));
     }
 
@@ -54,15 +61,6 @@ class ProductsController
         return $products;
     }
 
-    public function find($id)
-    {
-        return $this->products->findProduct($id);
-    } 
-
-    public function findJson($id)
-    {
-        die(json_encode($this->products->findProduct($id)));
-    } 
 
     public function delete()
     {
