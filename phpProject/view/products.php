@@ -129,10 +129,10 @@
             <td class="text-center">{{product.product}}</td>
             <td class="text-center">{{product.type_product}}</td>
             <td class="text-center">{{product.price}}</td>
-            <td class="text-center">{{product.price}}</td>
+            <td class="text-center">{{product.total_price}}</td>
             <td class="text-center">{{product.amount}}</td>
             <td class="text-center">{{product.taxes}}</td>
-            <td class="text-center">{{product.taxes}}</td>
+            <td class="text-center">{{product.total_taxes}}</td>
             <td class="text-center">
             <button type="button" class="btn btn-primary" ng-click=editProduct(product.cod) data-bs-toggle="button"><i class="fa-solid fa-pencil"></i></button>
             <button type="button" class="btn btn-danger" ng-click="deleteProduct(product.cod)"data-bs-toggle="button"><i class="fa-solid fa-trash-can"></i></button>

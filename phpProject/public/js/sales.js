@@ -35,7 +35,7 @@ function salesController($scope, $http, $rootScope, $location, $window) {
              url: '/products/saveSale',
              params: {id_sale: id_sale}
          }).then(function successCallback(response) {
-                swal('Success!', 'Sale closed', 'success');
+                swal('Success!', response.message, 'success');
                 iniciarController();
          });
     }
@@ -74,10 +74,7 @@ function salesController($scope, $http, $rootScope, $location, $window) {
         }).then(function successCallback(response) {
             $cart = response.data['PRODUCTS'];
             getProductsCart();
-            // iniciarController();
-        }).catch(function errorCallback(response) {
-            console.log(response);
-        });
+        })
     }
 
     function deleteSale(id){
@@ -92,8 +89,6 @@ function salesController($scope, $http, $rootScope, $location, $window) {
 
     }
 
-
-
     function getSales(){
         vm.getSales = $http({
             method: 'GET',
@@ -102,24 +97,6 @@ function salesController($scope, $http, $rootScope, $location, $window) {
         }).then(function successCallback(response) {
             vm.sales = response.data['sales'];
         });
-    }
-
-
-
-    function updateProduct(){
-        delete vm.productModel['created_at'];
-        delete vm.productModel['updated_at'];
-        const params = vm.productModel;
-        vm.updateProd = $http({
-            method: 'GET',
-            url: '/products/update',
-            params: params
-        }).then(function successCallback(response) {
-
-            swal("Sucess!", response.data.MESSAGE, "success");
-           iniciarController();
-        });
-
     }
 
 

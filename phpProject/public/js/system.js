@@ -38,7 +38,7 @@ function systemController($scope, $http, $rootScope, $location, $window) {
             url: '/products/add',
             params: params
         }).then(function successCallback(response){
-            swal("Success!","", "success");
+            swal("Success!","Product registered", "success");
             iniciarController();
         });
     }

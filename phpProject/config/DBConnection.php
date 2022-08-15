@@ -8,7 +8,7 @@ class DBConnection
     public function __construct()
     {
         $dbuser = "postgres";
-        $dbpass = "postgres";//"131303";
+        $dbpass = "131303";
         $dbname = "postgres";
         
         try 
