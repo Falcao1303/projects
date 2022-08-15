@@ -40,8 +40,8 @@ class ProductsController
             $id = $_GET['cod'];
             $result = $this->products->getProductId($id);
             if($_GET['edit'] == 'true'){
-                $result[0]['price'] = str_replace(',','.',str_replace('R$','',$result[0]['price'])); 
-                $result[0]['taxes'] = str_replace(',','.',str_replace('R$','',$result[0]['taxes']));
+                $result[0]['price'] = trim(str_replace(',','.',str_replace('R$','',$result[0]['price']))); 
+                $result[0]['taxes'] = trim(str_replace(',','.',str_replace('R$','',$result[0]['taxes'])));
             }
             echo json_encode(array('SUCCESS'=> TRUE,'PRODUCT' => $result));
         }catch(Exception $e){

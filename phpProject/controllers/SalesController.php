@@ -59,7 +59,7 @@ class SalesController
             $amount = $getSale[0]['amount'];
             $total = $getSale[0]['sub_total'];
             $saveSale = $this->sell->saveSale($id,$amount,$total);
-         echo json_encode(array('success'=> true,'sales'=>$saveSale,'message'=>'Sale id '.$id. 'Closed!'));
+         echo json_encode(array('success'=> true,'sales'=>$saveSale,'message'=>'Sale id '.$id. ' Closed!'));
         }catch(Exception $e){
             echo json_encode(array('success'=> false,'message'=> $e->getMessage()));
         }

@@ -35,8 +35,10 @@ function salesController($scope, $http, $rootScope, $location, $window) {
              url: '/products/saveSale',
              params: {id_sale: id_sale}
          }).then(function successCallback(response) {
-                swal('Success!', response.message, 'success');
-                iniciarController();
+                swal('Success!', response.data['message'], 'success');
+                vm.productsCart = [];
+                vm.saleCartModel.id_sale = 0;
+                $('#sale_id').prop('disabled', false)
          });
     }
 
