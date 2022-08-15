@@ -37,23 +37,37 @@ route('/products/getSales', function () {
 });
 
 //back-end routes
-
 if(isset($_GET['product'])){
+    echo"caiu aqui";
     $product_cod = $_GET['cod'];
     $description = $_GET['product'];
     $price = $_GET['price'];
     $amount = $_GET['amount'];
     $type = $_GET['type_product'];
     $taxes = $_GET['taxes'];
-    route('/products/add?amount='.$amount.'&cod='.$product_cod.'&price='.$price.'&product='.$description.'&taxes='.$taxes.'&type_product='.$type, function () {
-        $produtos = new ProductsController();
-        $produtos->save();
-    });
 
-    route('/products/update?amount='.$amount.'&cod='.$product_cod.'&id='.$_GET['id'].'&price='.$price.'&product='.$description.'&taxes='.$taxes.'&type_product='.$type, function () {
-        $produtos = new ProductsController();
-        $produtos->updateProduct();
-    });
+
+    if($_GET['update'] == 'true'){
+        route('/products/update?amount='.$amount.'&cod='.$product_cod.'&id='.$_GET['id'].'&price='.$price.'&product='.$description.'&save=false'.'&taxes='.$taxes.'&type_product='.$type.'&update=true', function () {
+            $produtos = new ProductsController();
+            $produtos->updateProduct();
+        });
+    }else{
+        route('/products/add?amount='.$amount.'&cod='.$product_cod.'&price='.$price.'&product='.$description.'&save=true'.'&taxes='.$taxes.'&type_product='.$type.'&update=false', function () {
+        
+            $produtos = new ProductsController();
+            $produtos->save();
+        });
+    }
+   
+}
+
+if(isset($_GET['edit'])){
+    
+        route('/products/getProduct?cod='.$_GET['cod'].'&edit='.$_GET['edit'], function () {
+            $products = new ProductsController();
+            $products->getProduct();
+        });
 }
 
 
@@ -79,16 +93,22 @@ if(isset($_GET['id_sale'])){
 
 }
 
-if(isset($_GET['cod'])){
-    route('/products/delete?cod='.$_GET['cod'] , function () {
-        $products = new ProductsController();
-        $products->delete();
-    });
+/* It's a debugging statement. It's not doing anything. */
+if(isset($_GET['cod']) && isset($_GET['save']) && !isset($_GET['edit'])){
+    if($_GET['update'] == 'null'){
+        route('/products/delete?cod='.$_GET['cod'] , function () {
+            $products = new ProductsController();
+            $products->delete();
+        });
+    }
+   
+    if($_GET['save'] == false){
+        route('/products/getProduct?cod='.$_GET['cod'].'&edit='.$_GET['edit'], function () {
+            $products = new ProductsController();
+            $products->getProduct();
+        });
+    }
 
-    route('/products/getProduct?cod='.$_GET['cod'].'&edit='.$_GET['edit'], function () {
-        $products = new ProductsController();
-        $products->getProduct();
-    } );
 }
 
 

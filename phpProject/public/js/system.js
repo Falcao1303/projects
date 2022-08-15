@@ -22,7 +22,9 @@ function systemController($scope, $http, $rootScope, $location, $window) {
             price : "",
             amount : "",
             type_product: "",
-            taxes : ""
+            taxes : "",
+            save: false,
+            update: false
         }
        getProducts(); 
         vm.edit = false;
@@ -30,11 +32,13 @@ function systemController($scope, $http, $rootScope, $location, $window) {
 
     function registerProduct(){
         const params = vm.productModel;
+        params.save = true;
         vm.registerProd = $http({
             method: 'GET',
             url: '/products/add',
             params: params
-        }).then(function successCallback(response) {
+        }).then(function successCallback(response){
+            swal("Success!","", "success");
             iniciarController();
         });
     }
@@ -56,7 +60,7 @@ function systemController($scope, $http, $rootScope, $location, $window) {
             params: {cod:id}
         }).then(function successCallback(response) {
             swal("Sucess!", response.data.MESSAGE, "success");
-            getProducts();
+            // getProducts();
         });
 
     }
@@ -86,14 +90,15 @@ function systemController($scope, $http, $rootScope, $location, $window) {
         delete vm.productModel['created_at'];
         delete vm.productModel['updated_at'];
         const params = vm.productModel;
+        params.save= false;
+        params.update = true;
         vm.updateProd = $http({
             method: 'GET',
             url: '/products/update',
             params: params
         }).then(function successCallback(response) {
-            console.log("response",response);
             swal("Sucess!", response.data.MESSAGE, "success");
-           iniciarController();
+            iniciarController();
         });
 
     }
