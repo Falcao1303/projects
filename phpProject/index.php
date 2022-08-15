@@ -37,6 +37,8 @@ route('/products/getSales', function () {
 });
 
 //back-end routes
+
+//crud products
 if(isset($_GET['product'])){
     echo"caiu aqui";
     $product_cod = $_GET['cod'];
@@ -71,28 +73,6 @@ if(isset($_GET['edit'])){
 }
 
 
-if(isset($_GET['id_sale'])){
-    $amount = !isset($_GET['amount']) ? 0 : $_GET['amount'];
-    $product_cart = !isset($_GET['product_cart']) ? 0 : $_GET['product_cart'];
-    $id = !isset($_GET['id_sale']) ? 0 : $_GET['id_sale'];
-    route('sales/addToCart?amount='.$amount.'&id_sale='.$id.'&product_cart='.$product_cart, function () {
-        $sales = new SalesController();
-        $sales->saveToTheCart();
-    });
-
-    route('/products/getProductsCart?id_sale='.$id, function () {
-        $sales = new SalesController();
-        $sales->getProductsCart();
-    });
-
-    route('/products/saveSale?id_sale='.$id, function () {
-        $sales = new SalesController();
-        $sales->saveSale();
-    });
-    
-
-}
-
 
 if(!isset($_GET['edit']) && isset($_GET['cod'])){
     route('/products/delete?cod='.$_GET['cod'] , function () {
@@ -120,14 +100,27 @@ route('/products/getProducts', function () {
     $produtos->getProducts();
 });
 
-if (isset($_GET['id']))
-{
 
-    route('tipos/find/?id='.$_GET['id'], function () {
-        $tipos = new TiposController();
-        $tipos->find($_GET['id']);
+//crud sales
+if(isset($_GET['id_sale'])){
+    $amount = !isset($_GET['amount']) ? 0 : $_GET['amount'];
+    $product_cart = !isset($_GET['product_cart']) ? 0 : $_GET['product_cart'];
+    $id = !isset($_GET['id_sale']) ? 0 : $_GET['id_sale'];
+    route('sales/addToCart?amount='.$amount.'&id_sale='.$id.'&product_cart='.$product_cart, function () {
+        $sales = new SalesController();
+        $sales->saveToTheCart();
     });
 
+    route('/products/getProductsCart?id_sale='.$id, function () {
+        $sales = new SalesController();
+        $sales->getProductsCart();
+    });
+
+    route('/products/saveSale?id_sale='.$id, function () {
+        $sales = new SalesController();
+        $sales->saveSale();
+    });
+    
 
 }
 
