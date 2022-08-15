@@ -60,7 +60,7 @@ function systemController($scope, $http, $rootScope, $location, $window) {
             params: {cod:id}
         }).then(function successCallback(response) {
             swal("Sucess!", response.data.MESSAGE, "success");
-            // getProducts();
+            getProducts();
         });
 
     }

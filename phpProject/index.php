@@ -93,15 +93,17 @@ if(isset($_GET['id_sale'])){
 
 }
 
-/* It's a debugging statement. It's not doing anything. */
+
+if(!isset($_GET['edit']) && isset($_GET['cod'])){
+    route('/products/delete?cod='.$_GET['cod'] , function () {
+        $products = new ProductsController();
+        $products->delete();
+    });
+}
+
+
 if(isset($_GET['cod']) && isset($_GET['save']) && !isset($_GET['edit'])){
-    if($_GET['update'] == 'null'){
-        route('/products/delete?cod='.$_GET['cod'] , function () {
-            $products = new ProductsController();
-            $products->delete();
-        });
-    }
-   
+
     if($_GET['save'] == false){
         route('/products/getProduct?cod='.$_GET['cod'].'&edit='.$_GET['edit'], function () {
             $products = new ProductsController();
