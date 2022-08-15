@@ -24,6 +24,7 @@ function salesController($scope, $http, $rootScope, $location, $window) {
             amount: 0
         }
        getSales(); 
+       getProducts();
         vm.edit = false;
     }
 
@@ -35,7 +36,7 @@ function salesController($scope, $http, $rootScope, $location, $window) {
              params: {id_sale: id_sale}
          }).then(function successCallback(response) {
                 swal('Success!', 'Sale closed', 'success');
-                getSales();
+                iniciarController();
          });
     }
 
