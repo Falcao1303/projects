@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    width: 10%;
+    height: 100px;
+    background-color:grey;
+    display: inline-block;
+}
+
+nav{
+    position: absolute; /*posso trabalhar com ele em qualquer posição*/
+    top: 30px;
+    left: 190px;
+}
+
+nav li{
+    display: inline-block; /*deixo a lista em linha*/
+    list-style: none;
+    padding: 10px;
+}
+
+nav li a{
+    text-decoration: none;
+}
