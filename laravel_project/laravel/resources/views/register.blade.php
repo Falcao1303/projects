@@ -3,7 +3,7 @@
 
 <!-- MDB -->
 
-<section ng-app="register" class="vh-100" style="background-color: #eee;">
+<section ng-app="register" class="vh-100" style="background-color: #f3eff9;">
   <div ng-controller="registerController" class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
