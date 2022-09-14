@@ -1,5 +1,12 @@
 
 @include('includes/header')
+<style>
+  #button{
+  background-color : #b5a0db;
+  color : white;
+  border : none;
+}
+</style>
 
 <!-- MDB -->
 
@@ -55,8 +62,8 @@
                     </label>
                   </div>
 
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" ng-click="saveRegister()" class="btn btn-primary btn-lg">Register</button>
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4" >
+                    <button type="button" id="button" ng-click="saveRegister()" class="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>
