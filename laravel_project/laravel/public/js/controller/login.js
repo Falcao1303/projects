@@ -7,8 +7,6 @@ loginController.$inject = ['$scope', '$http', '$rootScope', '$location', '$windo
 
 function loginController($scope, $http, $rootScope, $location, $window,httpdService) {
     var $injector = angular.injector();
-    console.log($injector);
-    console.log($scope);
     var vm = $scope;
     vm.findRegister = findRegister;
     iniciarController();
@@ -22,9 +20,12 @@ function loginController($scope, $http, $rootScope, $location, $window,httpdServ
 
     function findRegister(){
         const params = vm.loginForm;
-        console.log(params);
             httpdService.get('Laravel_Login', 'getUser',params,(response) =>{
-               console.log(response);
+               if(response.status == 'success'){
+                   $window.location.href = '/home';
+               }else{
+                    swal("Error", "User or password incorrect", "error");
+               }
         });
     }
 }
