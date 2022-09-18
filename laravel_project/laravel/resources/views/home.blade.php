@@ -1,1 +1,1 @@
-HELLOW WORLD
+@include('includes/sidebar')
