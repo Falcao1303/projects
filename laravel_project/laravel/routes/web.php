@@ -17,7 +17,7 @@ use App\Http\Controllers\Home\LoginController;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/dashboard', [HomeController::class, 'indexDashboard']);
 Route::get('/register/getRegisters', [RegisterController::class, 'getRegisters']);
 Route::get('/register/saveRegister', [RegisterController::class, 'saveRegister']);
 Route::get('/Login/getUser', [LoginController::class, 'getUser']);

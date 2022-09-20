@@ -8,15 +8,14 @@ use App\Models\Users\UsersModel;
 
 class HomeController extends Controller{
 
-
 private $_modelUsers;
 
 public function __construct(){
      $this->_modelUsers = new UsersModel();
 }
 
-public function index(){
-        return view('home');
+public function indexDashboard(){
+        return view('dashboard');
 }
 
 }
