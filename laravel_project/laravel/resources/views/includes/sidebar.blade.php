@@ -4,6 +4,10 @@
 #sidebar {
     background-color: #9173c9;
     height: 100%;
+    display: inline-block;
+    position:absolute;
+    width: 100%;
+    max-width: 280px
 }
 
 #sidebar-list ul li, .logo-sidebar{
@@ -35,7 +39,7 @@
 
 </style>
 
-<div class="col-md-2 d-flex flex-column flex-shrink-0 p-3 text-white" id="sidebar">
+<div class=" p-3 text-white" id="sidebar">
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
         <div class="sidebar-wrapper" id="sidebar-list">
             <div class="logo-sidebar">
