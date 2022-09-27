@@ -34,8 +34,12 @@
     border-radius: 50%;
 }
 
-
-
+@media (max-width: 500px) {
+    #sidebar {
+        position: fixed;
+        width: 100px;
+    }
+}
 
 </style>
 
