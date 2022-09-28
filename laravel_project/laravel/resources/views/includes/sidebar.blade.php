@@ -17,6 +17,11 @@
     font-size: 20px;
 }
 
+#sidebar-list ul li a{
+    display:inline-block;
+}
+
+
 #sidebar-list ul li a, .logo-sidebar a{
     color: white;
     text-decoration: none;
@@ -24,7 +29,14 @@
 
 #sidebar-list ul li a em{
     margin-right: 10px;
+    position:relative;
 }
+
+.option p{
+    display: inline-block;
+    margin-left: 10px;
+}
+
 
 .logo-sidebar img{
     width: 100%;
@@ -39,6 +51,23 @@
         position: fixed;
         width: 100px;
     }
+
+    .option p{
+    display: none;
+    }
+
+    .logo-sidebar img{
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    max-height: 37px;
+    border-radius: 50%;
+    }
+
+    .logo-sidebar p{
+        display: none;
+    }
+
 }
 
 </style>
@@ -47,33 +76,33 @@
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
         <div class="sidebar-wrapper" id="sidebar-list">
             <div class="logo-sidebar">
-                <img src="{{url('assets/logo_2.jpg')}}" class="simple-text">
-                    Smart Ecom
+                <img src="{{url('assets/logo_2.jpg')}}" class="simple-text" alt="Logo">
+                   <p>Smart Ecom</p>
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
-                <li class="active">
+                <li class="option">
                     <a href="">
-                        <em class="fa-solid fa-house"></em>Dashboard
+                        <em class="fa-solid fa-house"></em><p>Dashboard</p>
                     </a>
                 </li>
-                <li>
+                <li class="option">
                     <a href="">
-                        <em class="fa-solid fa-user"></em>User Profile
+                        <em class="fa-solid fa-user"></em><p>User Profile</p>
                     </a>
                 </li>
-                <li>
+                <li class="option">
                     <a href="">
-                        <em class="fa-solid fa-pencil"></em>Register
+                        <em class="fa-solid fa-pencil"></em><p>Register</p>
                     </a>
                 </li>
-                <li>
+                <li class="option">
                     <a href="">
-                        <em class="fa-solid fa-shop"></em>Marketplace
+                        <em class="fa-solid fa-shop"></em><p>Marketplace</p>
                     </a>
                 </li>
-                <li>
+                <li class="option">
                     <a href="">
-                        <em class="fa-solid fa-person"></em>Customers
+                        <em class="fa-solid fa-person"></em><p>Customers</p>
                     </a>
                 </li>
             </ul>
