@@ -52,6 +52,11 @@
         width: 100px;
     }
 
+    #sidebar-list a{
+        margin-top: 10px;
+        margin-left: 18px;
+    }
+
     .option p{
     display: none;
     }
@@ -68,6 +73,25 @@
         display: none;
     }
 
+    .responsive-side-bar{
+        position: absolute;
+        left: 10%;
+        left: 21%;
+        top: 3%;
+    }
+
+    .responsive-side-bar button{
+        border-radius: 50%;
+        background-color: #9173c9;
+        border: none;
+    }
+
+    .responsive-side-bar button i{
+        width: 23px;
+        height: 16px;
+        color: white;
+        margin: 6px 1px;
+    }
 }
 
 </style>
@@ -81,31 +105,36 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="option">
-                    <a href="">
+                    <a href="" title="Dashboard">
                         <em class="fa-solid fa-house"></em><p>Dashboard</p>
                     </a>
                 </li>
                 <li class="option">
-                    <a href="">
+                    <a href="" title="User Profile">
                         <em class="fa-solid fa-user"></em><p>User Profile</p>
                     </a>
                 </li>
-                <li class="option">
+                <li class="option" title="Register">
                     <a href="">
                         <em class="fa-solid fa-pencil"></em><p>Register</p>
                     </a>
                 </li>
                 <li class="option">
-                    <a href="">
+                    <a href="" title="MarketPlace">
                         <em class="fa-solid fa-shop"></em><p>Marketplace</p>
                     </a>
                 </li>
                 <li class="option">
-                    <a href="">
+                    <a href="" title="Customers">
                         <em class="fa-solid fa-person"></em><p>Customers</p>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
+</div>
+<div class="responsive-side-bar">
+<button>
+<i class="fa-sharp fa-solid fa-list"></i>
+</button>
 </div>
