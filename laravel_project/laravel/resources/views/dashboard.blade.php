@@ -2,8 +2,22 @@
 <style>
 
 .dashboard-principal{
-    margin-left:15%;
+    margin-left:20%;
 }
+
+.title-dash{
+    margin-bottom: 10px ;
+}
+
+@media (max-width: 1500px){
+    .dashboard-principal{
+    margin: auto 35%;
+    }
+    .title-dash{
+    padding: 10px; 
+    }    
+}
+
 
 </style>
 @include('includes/scripts')
@@ -13,7 +27,7 @@
 @include('includes/sidebar')
 </div>
 <div class="dashboard-principal col-md-10 col-sm-10">
-<h1>
+<h1 class="title-dash">
     Dashboard
 </h1>
 <section>    
@@ -41,7 +55,7 @@
                             <i class="fas fa-users fa-3x"></i>
                         </div>
                         <div class="col-md-8 col-sm-8">
-                            <h3>Users</h3>
+                            <h3>Users Online</h3>
                             <p>10</p>
                         </div>
                     </div>
@@ -56,7 +70,7 @@
                             <i class="fas fa-users fa-3x"></i>
                         </div>
                         <div class="col-md-8 col-sm-8">
-                            <h3>Users</h3>
+                            <h3>Sales</h3>
                             <p>10</p>
                         </div>
                     </div>
@@ -71,7 +85,7 @@
                             <i class="fas fa-users fa-3x"></i>
                         </div>
                         <div class="col-md-8 col-sm-8">
-                            <h3>Users</h3>
+                            <h3>Reported Problems</h3>
                             <p>10</p>
                         </div>
                     </div>

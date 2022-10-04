@@ -46,7 +46,7 @@
     border-radius: 50%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 780px) {
     #sidebar {
         position: fixed;
         width: 100px;
@@ -77,7 +77,7 @@
         position: absolute;
         left: 10%;
         left: 21%;
-        top: 3%;
+        top: 1%;
     }
 
     .responsive-side-bar button{
