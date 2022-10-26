@@ -16,7 +16,6 @@ function loginController($scope, $http, $timeout,$rootScope, $location, $window,
             email:'',
             password:'',
         }
-        console.log("root",$rootScope);
     }
 
     function findRegister(){

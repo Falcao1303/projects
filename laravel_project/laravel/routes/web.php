@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\RegisterController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\LoginController;
+use App\Http\Controllers\Customers\CustomerManagementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,4 @@ Route::get('/dashboard', [HomeController::class, 'indexDashboard']);
 Route::get('/register/getRegisters', [RegisterController::class, 'getRegisters']);
 Route::get('/register/saveRegister', [RegisterController::class, 'saveRegister']);
 Route::get('/Login/getUser', [LoginController::class, 'getUser']);
+Route::get('Customer/CustomersRegister', [CustomerManagementController::class, 'registerView']);
