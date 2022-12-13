@@ -1,3 +1,5 @@
+import { logTempoExecucao } from "../decorators/log-tempo-execucao.js";
+
 export abstract class View<T> {
     protected elemento: HTMLElement;
     private escape = false;
@@ -10,7 +12,7 @@ export abstract class View<T> {
             throw Error(`Seletor ${seletor} não existe no DOM. Verifique.`);
         };
     }
-
+    @logTempoExecucao()
     update(model: T): void {
         let template = this.template(model);
         if (this.escape) {

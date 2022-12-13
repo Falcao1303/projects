@@ -1,3 +1,4 @@
+import { logTempoExecucao } from "../decorators/log-tempo-execucao.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
@@ -19,6 +20,7 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     }
 
+    @logTempoExecucao() // decorator
     public adiciona(): void {
         const negociacao = Negociacao.criaDe(
             this.inputData.value, 
