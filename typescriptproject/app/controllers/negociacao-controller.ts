@@ -6,6 +6,7 @@ import { MensagemView } from "../views/mensagem-view.js";
 import { DiaDaSemana } from "../enums/dia-da-semana.js";
 import { domInject } from "../decorators/domInject.js";
 import { NegociacaoDiaService } from "../services/negociacao-dia-service.js";
+import { imprime } from "../utils/imprimir.js";
 
 export class NegociacaoController {
     @domInject('#data')
@@ -34,10 +35,7 @@ export class NegociacaoController {
             return;
         }
         this.negociacoes.adiciona(negociacao);
-        console.log(
-            `Data: ${negociacao.data}
-            Quantidade: ${negociacao.quantidade}
-            Valor: ${negociacao.valor}`);
+        imprime(negociacao,this.negociacoes);
         this.limparFormulario();
         this.atualizaView();
     }
