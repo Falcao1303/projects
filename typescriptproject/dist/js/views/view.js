@@ -6,8 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { logTempoExecucao } from "../decorators/log-tempo-execucao.js";
 export class View {
-    constructor(seletor, escape) {
-        this.escape = false;
+    constructor(seletor) {
         const elemento = document.querySelector(seletor);
         if (elemento) {
             this.elemento = elemento;
@@ -19,9 +18,6 @@ export class View {
     }
     update(model) {
         let template = this.template(model);
-        if (this.escape) {
-            template = template.replace(/<script>[\s\S]*?<\/script>/, '');
-        }
         this.elemento.innerHTML = template;
     }
 }

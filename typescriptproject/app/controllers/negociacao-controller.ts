@@ -5,6 +5,7 @@ import { NegociacoesView } from "../views/negociacoes-view.js";
 import { MensagemView } from "../views/mensagem-view.js";
 import { DiaDaSemana } from "../enums/dia-da-semana.js";
 import { domInject } from "../decorators/domInject.js";
+import { NegociacaoDiaService } from "../services/negociacao-dia-service.js";
 
 export class NegociacaoController {
     @domInject('#data')
@@ -16,6 +17,7 @@ export class NegociacaoController {
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView');
     private mensagemView = new MensagemView('#mensagemView');
+    private servico = new NegociacaoDiaService();
 
     constructor(){
         this.negociacoesView.update(this.negociacoes);
@@ -32,6 +34,10 @@ export class NegociacaoController {
             return;
         }
         this.negociacoes.adiciona(negociacao);
+        console.log(
+            `Data: ${negociacao.data}
+            Quantidade: ${negociacao.quantidade}
+            Valor: ${negociacao.valor}`);
         this.limparFormulario();
         this.atualizaView();
     }
@@ -50,6 +56,14 @@ export class NegociacaoController {
 
     private DiaUtil(data: Date): boolean {
         return data.getDay() > DiaDaSemana.DOMINGO && data.getDay() < DiaDaSemana.SABADO;
+    }
+
+    importarDados(): void {
+        this.servico.obterNegociacoes()
+        .then(negociacoes => {
+            negociacoes.forEach(negociacao => this.negociacoes.adiciona(negociacao));
+            this.negociacoesView.update(this.negociacoes);
+        });
     }
 
 }

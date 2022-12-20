@@ -10,14 +10,14 @@ import { Negociacoes } from "../models/negociacoes.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 import { MensagemView } from "../views/mensagem-view.js";
 import { DiaDaSemana } from "../enums/dia-da-semana.js";
+import { domInject } from "../decorators/domInject.js";
+import { NegociacaoDiaService } from "../services/negociacao-dia-service.js";
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
         this.negociacoesView = new NegociacoesView('#negociacoesView');
         this.mensagemView = new MensagemView('#mensagemView');
-        this.inputData = document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade');
-        this.inputValor = document.querySelector('#valor');
+        this.servico = new NegociacaoDiaService();
         this.negociacoesView.update(this.negociacoes);
     }
     adiciona() {
@@ -43,7 +43,23 @@ export class NegociacaoController {
     DiaUtil(data) {
         return data.getDay() > DiaDaSemana.DOMINGO && data.getDay() < DiaDaSemana.SABADO;
     }
+    importarDados() {
+        this.servico.obterNegociacoes()
+            .then(negociacoes => {
+            negociacoes.forEach(negociacao => this.negociacoes.adiciona(negociacao));
+            this.negociacoesView.update(this.negociacoes);
+        });
+    }
 }
+__decorate([
+    domInject('#data')
+], NegociacaoController.prototype, "inputData", void 0);
+__decorate([
+    domInject('#quantidade')
+], NegociacaoController.prototype, "inputQuantidade", void 0);
+__decorate([
+    domInject('#valor')
+], NegociacaoController.prototype, "inputValor", void 0);
 __decorate([
     logTempoExecucao()
 ], NegociacaoController.prototype, "adiciona", null);
