@@ -16,11 +16,6 @@
 }
 
 
-.card:hover{
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-    cursor: pointer; 
-}
-
 @media (max-width: 1500px){
     .dashboard-principal{
     margin: auto 35%;
@@ -34,7 +29,7 @@
 </style>
 @include('includes/scripts')
 
-<div class="dashborad col-md-12 col-sm-12"  ng-controller="dashboardController">       
+<div class="dashborad col-md-12 col-sm-12" ng-app="customer" ng-controller="customerRegisterController">       
 <div class="sidebar col-md-3">
 @include('includes/sidebar')
 </div>
@@ -43,7 +38,24 @@
     Customer Register
 </h1>
 <section>    
-
+    <div class="container">
+            <form>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" ng-model="customerData.name" id="name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" ng-model="customerData.email" id="email" placeholder="E-mail">
+              </div>
+              <div class="form-group">
+                <label for="document">Document:</label>
+                <input type="document" class="form-control" ng-model="customerData.document" id="document" placeholder="CPF">
+              </div>
+                </br>
+              <button type="submit" class="btn btn-default" id="registerCustomer" ng-click="saveCustomerRegister()">Register</button>
+            </form>
+    </div>
 </section>
 </div>                            
 </div>   

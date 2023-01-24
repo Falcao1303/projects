@@ -8,14 +8,19 @@ use App\Models\Customers\CustomersModel;
 
 class CustomerManagementController extends Controller{
 
-private $_modelCostumers;
-
-public function __construct(){
-     $this->_modelCostumers = new CustomersModel();
-}
-
-public function registerView(){
-        return view('customers/register');
-}
-
+        private $_modelCostumers;
+        
+        public function __construct(){
+             $this->_modelCostumers = new CustomersModel();
+        }
+        
+        public function registerView(){
+                return view('customers/register');
+        }
+        
+        public function register(Request $request){
+            $data = $request->all();
+            $this->_modelCostumers->register($data);
+            return;
+        }
 }

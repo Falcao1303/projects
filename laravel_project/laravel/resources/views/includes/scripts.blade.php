@@ -7,6 +7,7 @@
 <script src="{{url('js/jquery-3.6.0.min.js')}}" type="text/javascript"></script>
 <script src="{{url('js/controller/register.js')}}" type="text/javascript"></script>
 <script src="{{url('js/controller/login.js')}}" type="text/javascript"></script>
+<script src="{{url('js/controller/customerRegister.js')}}" type="text/javascript"></script>
 <script src="{{url('js/controller/dashboard.js')}}" type="text/javascript"></script>
 <script src="{{url('js/service/httpd-service.js')}}" type="text/javascript"></script>
 <!-- Sweet alert -->

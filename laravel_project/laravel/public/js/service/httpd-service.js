@@ -4,10 +4,10 @@ app.service('httpdService', ['$rootScope', '$http', function ($rootScope, $http)
     this.get = function (controller, method, params, callback, erro) {
         var url = `?con=${controller}&act=${method}`;
         if (controller.substring(0,7)==='Laravel') {
-            console.log(controller)
+            console.log("caiu aqui",controller)
             url = `${controller.substring(8).split("_").join('/')}/${method}`;
         }
-
+        console.log(controller,callback);
         return $http({
             method: 'GET',
             url: url,
