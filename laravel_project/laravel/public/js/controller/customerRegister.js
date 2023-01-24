@@ -7,8 +7,6 @@ customerRegisterController.$inject = ['$scope', '$http', '$rootScope', '$locatio
 
 function customerRegisterController($scope, $http, $rootScope, $location, $window,httpdService) {
     var $injector = angular.injector();
-    console.log($injector);
-    console.log($scope);
     var vm = $scope;
     vm.saveCustomerRegister = saveCustomerRegister;
     iniciarController();
