@@ -27,7 +27,6 @@
 
 
 </style>
-@include('includes/scripts')
 
 <div class="dashborad col-md-12 col-sm-12" ng-app="customer" ng-controller="customerRegisterController">       
 <div class="sidebar col-md-3">

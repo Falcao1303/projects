@@ -24,3 +24,4 @@ Route::get('/register/saveRegister', [RegisterController::class, 'saveRegister']
 Route::get('/Login/getUser', [LoginController::class, 'getUser']);
 Route::get('Customer/CustomersRegister', [CustomerManagementController::class, 'registerView']);
 Route::get('Customer/customerRegister/register', [CustomerManagementController::class, 'register']);
+Route::get('/customerRegister/countCostumers', [CustomerManagementController::class, 'countCostumers']);

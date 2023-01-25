@@ -13,11 +13,18 @@ function dashboardController($scope, $http,$timeout, $rootScope, $location, $win
     iniciarController();
 
     function iniciarController(){
-        console.log("roostcopedash", $rootScope);
+        getCustomersRegistered();
     }
 
     function openRegisterUser(){
         console.log("oi");
         $timeout(function(){$window.location.href = 'Customer/CustomersRegister'});
+    }
+
+    function getCustomersRegistered(){
+        const params = vm.customerData;
+        httpdService.get('Laravel_customerRegister', 'countCostumers',params,(response) =>{
+            vm.countCostumers = response.count;
+        });
     }
 }

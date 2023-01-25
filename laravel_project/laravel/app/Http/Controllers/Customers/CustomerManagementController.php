@@ -19,8 +19,20 @@ class CustomerManagementController extends Controller{
         }
         
         public function register(Request $request){
-            $data = $request->all();
-            $this->_modelCostumers->register($data);
-            return;
+          try{
+                $data = $request->all();
+                $this->_modelCostumers->customerRegister($data);
+                return response()->json(['SUCCESS' => 'true', 'message' => 'Customer Registered!']);
+          }catch(\Exception $e){
+                return response()->json(['ERROR' => 'true', 'error' => $e->getMessage()]);
+          }
+        }
+
+        public function countCostumers(){
+            try{
+                return response()->json(['SUCCESS' => 'true', 'count' => $this->_modelCostumers->countCostumers()]);
+            }catch(\Exception $e){
+                return response()->json(['ERROR' => 'true', 'error' => $e->getMessage()]);
+            }  
         }
 }

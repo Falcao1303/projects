@@ -32,7 +32,6 @@
 
 
 </style>
-@include('includes/scripts')
 <body ng-app="dashboard">
 <div class="dashborad col-md-12 col-sm-12"  ng-controller="dashboardController">       
 <div class="sidebar col-md-3">
@@ -53,7 +52,7 @@
                         </div>
                         <div class="col-md-8 col-sm-8" >
                             <h3>Customers Register</h3>
-                            <p>10</p>
+                            <p>@{{countCostumers}} -- Registers</p>
                         </div>
                     </div>
                 </div>

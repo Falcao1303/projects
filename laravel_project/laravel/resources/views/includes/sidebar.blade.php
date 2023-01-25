@@ -105,7 +105,7 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="option">
-                    <a href="" title="Dashboard">
+                    <a href="/dashboard" title="Dashboard">
                         <em class="fa-solid fa-house"></em><p>Dashboard</p>
                     </a>
                 </li>
