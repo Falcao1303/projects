@@ -17,6 +17,18 @@ class CustomerManagementController extends Controller{
         public function registerView(){
                 return view('customers/register');
         }
+
+        public function listCostumersView(){
+                return view('customers/list');
+        }
+
+        public function listCostumers(){
+            try{
+                return response()->json(['SUCCESS' => 'true', 'customers' => $this->_modelCostumers->listCostumers()]);
+            }catch(\Exception $e){
+                return response()->json(['ERROR' => 'true', 'error' => $e->getMessage()]);
+            }  
+        }
         
         public function register(Request $request){
           try{

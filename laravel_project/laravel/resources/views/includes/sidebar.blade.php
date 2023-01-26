@@ -125,7 +125,7 @@
                     </a>
                 </li>
                 <li class="option">
-                    <a href="" title="Customers">
+                    <a href="Customer/List" title="Customers">
                         <em class="fa-solid fa-person"></em><p>Customers</p>
                     </a>
                 </li>
