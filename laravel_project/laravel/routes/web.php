@@ -13,8 +13,27 @@ use App\Http\Controllers\Customers\CustomerManagementController;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
-*/
+// |
+// */
+// Route::group(['prefix' => 'home'], function() {
+//     Route::get('/', [LoginController::class, 'index']);
+//     Route::get('register', [RegisterController::class, 'index']);
+//     Route::get('dashboard', [HomeController::class, 'indexDashboard']);
+
+//     Route::get('register/getRegisters', [RegisterController::class, 'getRegisters']);
+//     Route::get('register/saveRegister', [RegisterController::class, 'saveRegister']);
+//     Route::get('Login/getUser', [LoginController::class, 'getUser']);
+// });
+
+// Route::group(['prefix' => 'customer'], function() {
+//     Route::get('/', [CustomerManagementController::class, 'registerView']);
+//     Route::get('list', [CustomerManagementController::class, 'listCostumersView']);
+//     Route::get('register', [CustomerManagementController::class, 'register']);
+//     Route::get('count', [CustomerManagementController::class, 'countCostumers']);
+//     Route::get('list', [CustomerManagementController::class, 'listCostumers']);
+// });
+
+
 
 //HOME
 Route::get('/', [LoginController::class, 'index']);
