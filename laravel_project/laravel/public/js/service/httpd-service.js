@@ -28,12 +28,5 @@ app.service('httpdService', ['$rootScope', '$http', function ($rootScope, $http)
         }).success(callback).catch(erro);
     };
 
-    this.scf = function (params, callback, erro) {
-        return $http({
-            method: 'POST',
-            url: `${$rootScope.serverCupomFiscal}:8383`,
-            data: $.param(params)
-        }).success(callback).catch(erro);
-    };
 
 }]);
