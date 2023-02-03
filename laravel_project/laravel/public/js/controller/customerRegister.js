@@ -9,6 +9,7 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
     var $injector = angular.injector();
     var vm = $scope;
     vm.saveCustomerRegister = saveCustomerRegister;
+    vm.openModalEdit = openModalEdit;
     iniciarController();
 
 
@@ -37,8 +38,17 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
     function getCustomers(){
         const params = vm.customerData;
         httpdService.get('Laravel_customerRegister', 'listCustomers','',(response) =>{
-            console.log(response);
             vm.customers = response.customers;
         });
+    }
+
+    function openModalEdit(customer){
+        vm.customerData.name = customer.name;
+        vm.customerData.email = customer.email;
+        vm.customerData.document = customer.document;
+        console.log(vm.customerData);
+
+        $('#modalEdit').modal('show');
+
     }
 }

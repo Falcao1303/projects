@@ -29,7 +29,7 @@ Route::get('/Login/getUser', [LoginController::class, 'getUser']);
 
 //CUSTOMERS
 Route::get('Customer/CustomersRegister', [CustomerManagementController::class, 'registerView']);
-Route::get('Customer/List', [CustomerManagementController::class, 'listCostumersView']);
+Route::get('customers/list', [CustomerManagementController::class, 'listCostumersView']);
 Route::get('Customer/customerRegister/register', [CustomerManagementController::class, 'register']);
 Route::get('/customerRegister/countCostumers', [CustomerManagementController::class, 'countCostumers']);
-Route::get('Customer/customerRegister/listCustomers', [CustomerManagementController::class, 'listCostumers']);
+Route::get('/customers/customerRegister/listCustomers', [CustomerManagementController::class, 'listCostumers']);

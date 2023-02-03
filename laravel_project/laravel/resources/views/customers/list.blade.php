@@ -69,6 +69,7 @@
                                 <th>Name</th>
                                 <th>CPF</th>
                                 <th>E-mail</th>
+                                <th>Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -76,6 +77,9 @@
                                     <td>@{{customer.name}}</td>
                                     <td>@{{customer.document}}</td>
                                     <td>@{{customer.email}}</td>
+                                    <td>
+                                        <a class="btn btn-primary" title="Edit" ng-click="openModalEdit(customers[$index])"><i class="fa-solid fa-pencil"></i></a>
+                                        <a class="btn btn-danger" tile="Delete"><i class="fa-solid fa-trash-can"></i></a>
                                 </tr>
                             </tbody>
                     </table>
@@ -85,5 +89,38 @@
 </section>
 </div>                            
 </div>   
+
+
+<div class="modal fade bd-example-modal-lg" id="modalEdit"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class ="modal-header">
+                <h5 class="modal-title">Edit Customer</h5>
+            </div>
+            <div class="card col-md-12" >
+            <div class="card-body">
+                        <div class="row">
+                        <form>
+                              <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" ng-model="customerData.name" id="name" placeholder="Name">
+                              </div>
+                              <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" class="form-control" ng-model="customerData.email" id="email" placeholder="E-mail">
+                              </div>
+                              <div class="form-group">
+                                <label for="document">Document:</label>
+                                <input type="document" class="form-control" ng-model="customerData.document" id="document" placeholder="Document">
+                              </div>
+                                </br>
+                              <button type="submit" class="btn btn-default" id="registerCustomer" ng-click="updateCustomerRegister()">Update</button>
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
 
 </body>
