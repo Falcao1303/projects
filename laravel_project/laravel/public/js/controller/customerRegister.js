@@ -10,6 +10,7 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
     var vm = $scope;
     vm.saveCustomerRegister = saveCustomerRegister;
     vm.openModalEdit = openModalEdit;
+    vm.updateCustomer = updateCustomer;
     iniciarController();
 
 
@@ -43,12 +44,17 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
     }
 
     function openModalEdit(customer){
-        vm.customerData.name = customer.name;
-        vm.customerData.email = customer.email;
-        vm.customerData.document = customer.document;
-        console.log(vm.customerData);
-
+        vm.editRegister = angular.copy(customer);
         $('#modalEdit').modal('show');
-
     }
+
+    function updateCustomer(){
+        const params = vm.editRegister;
+        httpdService.post('Laravel_customerRegister', 'updateCustomer',params,(response) =>{
+            swal("Sucess!", response.message, "success");
+            iniciarController();
+            $('#modalEdit').modal('hide');
+        });
+    }
+
 }

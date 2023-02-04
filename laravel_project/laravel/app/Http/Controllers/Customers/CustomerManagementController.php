@@ -22,9 +22,9 @@ class CustomerManagementController extends Controller{
                 return view('customers/list');
         }
 
-        public function listCostumers(){
+        public function listCustomers(){
             try{
-                return response()->json(['SUCCESS' => 'true', 'customers' => $this->_modelCostumers->listCostumers()]);
+                return response()->json(['SUCCESS' => 'true', 'customers' => $this->_modelCostumers->listCustomers()]);
             }catch(\Exception $e){
                 return response()->json(['ERROR' => 'true', 'error' => $e->getMessage()]);
             }  
@@ -46,5 +46,11 @@ class CustomerManagementController extends Controller{
             }catch(\Exception $e){
                 return response()->json(['ERROR' => 'true', 'error' => $e->getMessage()]);
             }  
+        }
+
+        public function updateCustomer(Request $request){
+            $data = $request->all();
+            $this->_modelCostumers->updateCustomer($data);
+            return response()->json(['SUCCESS' => 'true', 'message' => 'Customer Updated!']);
         }
 }

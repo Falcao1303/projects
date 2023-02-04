@@ -16,6 +16,7 @@ app.service('httpdService', ['$rootScope', '$http', function ($rootScope, $http)
     };
 
     this.post = function (controller, method, params, callback, erro) {
+        console.log($.param(params));
         var url = `?con=${controller}&act=${method}`;
         if (controller.substring(0,7)==='Laravel') {
             console.log(controller)
@@ -24,7 +25,7 @@ app.service('httpdService', ['$rootScope', '$http', function ($rootScope, $http)
         return $http({
             method: 'POST',
             url: url,
-            data: $.param(params)
+            data: params
         }).success(callback).catch(erro);
     };
 

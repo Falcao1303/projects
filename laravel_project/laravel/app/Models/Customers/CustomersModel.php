@@ -17,8 +17,12 @@ class CustomersModel extends Model{
         return DB::table('cadastro-teste.clientes')->count();
     }
 
-    public function listCostumers(){
+    public function listCustomers(){
         return DB::table('cadastro-teste.clientes')->get();
+    }
+
+    public function updateCustomer($data){
+        return DB::table('cadastro-teste.clientes')->where('idcostumer', $data['idcostumer'])->update($data);
     }
 
 }

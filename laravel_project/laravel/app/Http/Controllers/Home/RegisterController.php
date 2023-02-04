@@ -36,7 +36,6 @@ public function saveRegister(Request $request){
         return response()->json(['status' => 'error', 'message' => 'Register failed']);
     }
 }
-
     
 }
 

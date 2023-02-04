@@ -87,10 +87,7 @@
         </div>
     </div>
 </section>
-</div>                            
-</div>   
-
-
+</div>      
 <div class="modal fade bd-example-modal-lg" id="modalEdit"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -103,24 +100,28 @@
                         <form>
                               <div class="form-group">
                                 <label for="name">Name:</label>
-                                <input type="text" class="form-control" ng-model="customerData.name" id="name" placeholder="Name">
+                                <input type="text" class="form-control" ng-model="editRegister.name" id="name" placeholder="Name">
                               </div>
                               <div class="form-group">
                                 <label for="email">E-mail:</label>
-                                <input type="email" class="form-control" ng-model="customerData.email" id="email" placeholder="E-mail">
+                                <input type="email" class="form-control" ng-model="editRegister.email" id="email" placeholder="E-mail">
                               </div>
                               <div class="form-group">
                                 <label for="document">Document:</label>
-                                <input type="document" class="form-control" ng-model="customerData.document" id="document" placeholder="Document">
+                                <input type="document" class="form-control" ng-model="editRegister.document" id="document" placeholder="Document">
                               </div>
                                 </br>
-                              <button type="submit" class="btn btn-default" id="registerCustomer" ng-click="updateCustomerRegister()">Update</button>
+                              <button type="submit" class="btn btn-default" id="registerCustomer" ng-click="updateCustomer()">Update</button>
                         </form>
                      </div>
                 </div>
             </div>
         </div>
   </div>
-</div>
+</div>                      
+</div>   
+
+
+
 
 </body>
