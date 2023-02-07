@@ -12,6 +12,7 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
     vm.openModalEdit = openModalEdit;
     vm.updateCustomer = updateCustomer;
     vm.deleteCustomer = deleteCustomer;
+    vm.getCustomers = getCustomers;
     iniciarController();
 
 
@@ -37,9 +38,14 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
          });
     }
 
-    function getCustomers(){
+    function getCustomers (filter) {
+        console.log("filter",filter);
         const params = vm.customerData;
-        httpdService.get('Laravel_customerRegister', 'listCustomers','',(response) =>{
+        if(filter){
+            params.filter = vm.filterModel.name;
+        }
+        httpdService.get('Laravel_customerRegister', 'listCustomers',params,(response) =>{
+            console.log(response.customers);
             vm.customers = response.customers;
         });
     }

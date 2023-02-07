@@ -13,6 +13,10 @@ class CustomersModel extends Model{
         return DB::table('cadastro-teste.clientes')->insert($data);
     }
 
+    public function filterCustomers($data){
+        return DB::table('cadastro-teste.clientes')->where('name', 'like', '%'.$data['filter'].'%')->get();
+    }
+
     public function countCostumers(){
         return DB::table('cadastro-teste.clientes')->count();
     }

@@ -43,8 +43,8 @@
                 <div class="row">
                     <div class="col-md-8">
                         <label for="name">Name</label></br>
-                        <input class="col-md-4"type="text" ng-model="filterModel.name">
-                        <a class="btn btn-primary " id="searchCustomer">Search</a>
+                        <input class="col-md-4"type="text" placeholde="Type a name..."  ng-model="filterModel.name">
+                        <a class="btn btn-primary " id="searchCustomer" ng-click="getCustomers(true)">Search</a>
                     </div>
              </div>
         </div>

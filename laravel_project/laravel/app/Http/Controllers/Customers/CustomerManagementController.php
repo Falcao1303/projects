@@ -22,9 +22,14 @@ class CustomerManagementController extends Controller {
                 return view('customers/list');
         }
 
-        public function listCustomers() {
+        public function listCustomers(Request $request) {
             try{
-                return response()->json(['SUCCESS' => 'true', 'customers' => $this->_modelCostumers->listCustomers()]);
+                $filter = $request->all();
+                if (array_key_exists('filter', $filter) && $filter['filter']){
+                    return response()->json(['SUCCESS' => 'true', 'customers' => $this->_modelCostumers->filterCustomers($filter)]);
+                }else{
+                    return response()->json(['SUCCESS' => 'true', 'customers' => $this->_modelCostumers->listCustomers()]);
+                }
             }catch(\Exception $e){
                 return response()->json(['ERROR' => 'true', 'error' => $e->getMessage()]);
             }  
