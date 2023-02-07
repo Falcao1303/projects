@@ -11,6 +11,7 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
     vm.saveCustomerRegister = saveCustomerRegister;
     vm.openModalEdit = openModalEdit;
     vm.updateCustomer = updateCustomer;
+    vm.deleteCustomer = deleteCustomer;
     iniciarController();
 
 
@@ -54,6 +55,14 @@ function customerRegisterController($scope, $http, $rootScope, $location, $windo
             swal("Sucess!", response.message, "success");
             iniciarController();
             $('#modalEdit').modal('hide');
+        });
+    }
+
+    function deleteCustomer(customer){
+        const params = customer;
+        httpdService.post('Laravel_customerRegister', 'deleteCustomer',params,(response) =>{
+            swal("Sucess!", response.message, "success");
+            iniciarController();
         });
     }
 

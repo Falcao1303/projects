@@ -25,4 +25,8 @@ class CustomersModel extends Model{
         return DB::table('cadastro-teste.clientes')->where('idcostumer', $data['idcostumer'])->update($data);
     }
 
+    public function deleteCustomer($data){
+        return DB::table('cadastro-teste.clientes')->where('idcostumer', $data[0])->delete();
+    }
+
 }

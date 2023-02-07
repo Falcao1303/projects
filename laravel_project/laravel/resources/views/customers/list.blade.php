@@ -32,7 +32,7 @@
 </div>
 <div class="dashboard-principal col-md-10 col-sm-10">
 <h1 class="title-screen">
-    Costumer List
+    Customer List
 </h1>
 <section>    
     <div class="card col-md-10" >
@@ -79,7 +79,7 @@
                                     <td>@{{customer.email}}</td>
                                     <td>
                                         <a class="btn btn-primary" title="Edit" ng-click="openModalEdit(customers[$index])"><i class="fa-solid fa-pencil"></i></a>
-                                        <a class="btn btn-danger" tile="Delete"><i class="fa-solid fa-trash-can"></i></a>
+                                        <a class="btn btn-danger" tile="Delete" ng-click="deleteCustomer(customer.idcostumer)"><i class="fa-solid fa-trash-can"></i></a>
                                 </tr>
                             </tbody>
                     </table>

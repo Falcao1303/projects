@@ -34,3 +34,4 @@ Route::get('Customer/customerRegister/register', [CustomerManagementController::
 Route::get('/customerRegister/countCostumers', [CustomerManagementController::class, 'countCostumers']);
 Route::get('/customers/customerRegister/listCustomers', [CustomerManagementController::class, 'listCustomers']);
 Route::post('/customers/customerRegister/updateCustomer', [CustomerManagementController::class, 'updateCustomer']);
+Route::post('/customers/customerRegister/deleteCustomer', [CustomerManagementController::class, 'deleteCustomer']);
