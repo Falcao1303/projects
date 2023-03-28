@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pensamento } from '../pensamento';
 
 @Component({
   selector: 'app-listar-pensamento',
@@ -7,23 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarPensamentoComponent implements OnInit {
 
-  listaPensamentos = [
-    {
-      conteudo: 'Angular comunicação',
-      autoria: 'Lucas',
-      modelo: 'modelo3'
-    },
-    {
-      conteudo: 'Angular comunicação 2',
-      autoria: 'Lucas',
-      modelo: 'modelo2'
-    },
-    {
-      conteudo: 'Angular comunicação 22',
-      autoria: 'Lucas',
-      modelo: 'modelo1'
-    }
-  ];
+  listaPensamentos: Pensamento[] = [];
   constructor() { }
 
   ngOnInit(): void {
