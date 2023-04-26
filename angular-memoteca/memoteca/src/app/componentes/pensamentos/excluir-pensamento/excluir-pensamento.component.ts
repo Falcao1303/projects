@@ -19,7 +19,8 @@ export class ExcluirPensamentoComponent implements OnInit {
     id: 0,
     conteudo: '',
     autoria: '',
-    modelo: ''
+    modelo: '',
+    favorito: false
   }
 
   ngOnInit(): void {
