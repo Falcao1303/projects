@@ -33,7 +33,7 @@
       "autoria": "Testador",
       "modelo": "modelo2",
       "id": 5,
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "Pensamento6",
@@ -55,6 +55,13 @@
       "modelo": "modelo2",
       "id": 8,
       "favorito": false
+    },
+    {
+      "conteudo": "testando favoritos",
+      "autoria": "Lucas",
+      "modelo": "modelo2",
+      "pensamento": false,
+      "id": 9
     }
   ]
 }
