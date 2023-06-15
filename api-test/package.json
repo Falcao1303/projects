@@ -1,0 +1,32 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "node main.ts",
+    "dev": "nodemon main.ts"
+  },
+  "author": "lucas",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs-modules/mailer": "^1.8.1",
+    "@nestjs/axios": "^2.0.0",
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.3.1",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/mapped-types": "*",
+    "@nestjs/mongoose": "^9.2.1",
+    "@nestjs/platform-express": "^9.0.0",
+    "amqplib": "^0.10.3",
+    "axios": "^1.3.4",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "typescript": "^4.4.2"
+  }
+}
