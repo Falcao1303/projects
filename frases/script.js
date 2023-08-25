@@ -22,7 +22,7 @@ function appController($scope, $http, $rootScope, $location, $window) {
 
     $scope.descobrirMensagem = function() {
         if ($scope.mensagensExibidas.length === $scope.mensagem.length) {
-            $scope.mensagem_gerada = "Não há mais mensagens disponíveis.Volte amanhã!";
+            $scope.mensagem_gerada = "Não há mais mensagens disponíveis!";
         } else {
             var mensagemAleatoriaIndex;
             do {
