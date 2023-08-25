@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mensagens Felizes.com</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <!-- Incluindo o CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src='script.js'></script>
+</head>
+<body ng-controller="appController" class="container">
+    <header>
+        <h2>Mensagens para o seu dia ficar feliz!</h2>
+    </header>
+    <div class="jumbotron">
+        <div class="form-group">
+            <label for="mensagemInput">Busque aqui sua mensagem</label>
+            <input type="text" class="form-control" id="mensagemInput" ng-model="mensagem_gerada" disabled>
+        </div>
+        <button class="btn btn-primary" ng-click="descobrirMensagem()">Descubra sua mensagem feliz :D</button>
+    </div>
+</body>
+</html>
