@@ -5,22 +5,32 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Mensagens Felizes.com</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <!-- Incluindo o CSS do Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src='script.js'></script>
 </head>
 <body ng-controller="appController" class="container">
     <header>
-        <h2>Mensagens para o seu dia ficar feliz!</h2>
+        <h1 class="text-center">Mensagens para o seu dia ficar feliz!</h1>
     </header>
-    <div class="jumbotron">
-        <div class="form-group">
-            <label for="mensagemInput">Busque aqui sua mensagem</label>
-            <input type="text" class="form-control" id="mensagemInput" ng-model="mensagem_gerada" disabled>
+    <div class="row">
+        <div class="col-md-3 col-sm-4 text-center">
+            <img src="./logo-ccpop.png" alt="Logo" class="img-responsive" style="max-width: 150px; max-height: 150px;">
         </div>
-        <button class="btn btn-primary" ng-click="descobrirMensagem()">Descubra sua mensagem feliz :D</button>
+        <div class="col-md-6 col-sm-4"> <!-- Mantida como col-md-6 para uma largura menor -->
+            <div class="jumbotron">
+                <div class="form-group">
+                    <label for="mensagemInput">Busque aqui sua mensagem</label>
+                    <input type="text" class="form-control" id="mensagemInput" ng-model="mensagem_gerada" disabled>
+                </div>
+                <button class="btn btn-success btn-block" ng-click="descobrirMensagem()">Descubra sua mensagem feliz :D</button>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4 text-center">
+            <img src="./logopg.png" alt="Logo" class="img-responsive" style="max-width: 150px; max-height: 150px;">
+        </div>
     </div>
 </body>
 </html>
