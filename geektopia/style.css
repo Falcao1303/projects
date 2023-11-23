@@ -1,0 +1,40 @@
+body {
+    font-family: 'Press Start 2P', cursive; /* Fonte estilo retro */
+    background-color: #000; /* Fundo preto para destacar as cores */
+    color: #fff; /* Texto branco para contraste */
+    text-align: center;
+}
+
+header {
+    background-color: #1c1c1c; /* Cabeçalho escuro */
+    color: #f0f0f0; /* Texto claro no cabeçalho */
+    padding: 20px 0;
+    border-bottom: 4px solid #f0f0f0; /* Borda inferior estilo pixel */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #4af; /* Cor brilhante para os links */
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 3px; /* Espaçamento entre letras para efeito retro */
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    color: #fa4; /* Cor ao passar o mouse ou focar */
+    text-shadow: 0 0 10px #fa4; /* Sombra para destacar */
+}
+
+/* Estilos adicionais para seções específicas */
+
+/* Adicionar fonte do Google Fonts no <head> do seu HTML */
+/* <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> */
